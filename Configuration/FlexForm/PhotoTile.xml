@@ -1,0 +1,445 @@
+<T3DataStructure>
+<meta>
+	<langDisable>1</langDisable>
+</meta>
+<sheets>
+	<!--
+		################################
+		  SHEET General Settings
+		################################
+	-->
+	<sDEF>
+		<ROOT>
+			<TCEforms>
+				<sheetTitle>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.sheetTitle</sheetTitle>
+			</TCEforms>
+			<type>array</type>
+			<el>
+				<settings.user>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.user</label>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim,required</eval>
+				        </config>
+					</TCEforms>
+				</settings.user>
+			</el>
+		</ROOT>
+	</sDEF>
+
+	<!--
+		################################
+		  SHEET Settings
+		################################
+	-->
+	<configuration>
+		<ROOT>
+			<TCEforms>
+				<sheetTitle>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.configuration</sheetTitle>
+			</TCEforms>
+			<type>array</type>
+			<el>
+				<settings.source>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.source</label>
+						<onChange>reload</onChange>
+						<config>
+				            <type>select</type>
+				            <items type="array">
+				                <numIndex index="0" type="array">
+				                    <numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.source.0</numIndex>
+				                    <numIndex index="1">user_recent</numIndex>
+				                </numIndex>
+				                <numIndex index="2" type="array">
+				                    <numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.source.1</numIndex>
+				                    <numIndex index="1">user_liked</numIndex>
+				                </numIndex>
+				                <numIndex index="4" type="array">
+				                    <numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.source.2</numIndex>
+				                    <numIndex index="1">global_popular</numIndex>
+				                </numIndex>
+				                <numIndex index="5" type="array">
+				                    <numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.source.3</numIndex>
+				                    <numIndex index="1">global_tag</numIndex>
+				                </numIndex>
+				            </items>
+				        </config>
+					</TCEforms>
+				</settings.source>
+				<settings.tag>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.tag</label>
+						<displayCond>FIELD:settings.source:IN:user_tag,global_tag</displayCond>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim,required</eval>
+				        </config>
+					</TCEforms>
+				</settings.tag>
+				<settings.image_link>
+				    <TCEforms>
+				        <label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.image_link</label>
+				        <onChange>reload</onChange>
+				        <config>
+				            <type>select</type>
+				            <items type="array">
+				                <numIndex index="0" type="array">
+				                    <numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.image_link.0</numIndex>
+				                    <numIndex index="1">none</numIndex>
+				                </numIndex>
+				                <numIndex index="1" type="array">
+				                    <numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.image_link.1</numIndex>
+				                    <numIndex index="1">instagram</numIndex>
+				                </numIndex>
+				                <numIndex index="2" type="array">
+				                    <numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.image_link.2</numIndex>
+				                    <numIndex index="1">link</numIndex>
+				                </numIndex>
+				                <numIndex index="3" type="array">
+				                    <numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.image_link.3</numIndex>
+				                    <numIndex index="1">lightbox</numIndex>
+				                </numIndex>
+				            </items>
+				        </config>
+				    </TCEforms>
+				</settings.image_link>
+				<settings.lightbox>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.lightbox</label>
+						<displayCond>FIELD:settings.image_link:=:lightbox</displayCond>
+						<config>
+							<type>select</type>
+							<items>
+								<numIndex index="0" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.lightbox.0</numIndex>
+									<numIndex index="1">colorbox</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.lightbox.1</numIndex>
+									<numIndex index="1">fancybox</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.lightbox.2</numIndex>
+									<numIndex index="1">prettyphoto</numIndex>
+								</numIndex>
+							</items>
+						</config>
+					</TCEforms>
+				</settings.lightbox>
+				<settings.link_url>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.link_url</label>
+						<displayCond>FIELD:settings.image_link:=:link</displayCond>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim</eval>
+				        </config>
+					</TCEforms>
+				</settings.link_url>
+				<settings.show_link>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.show_link</label>
+						<config>
+				          	<type>check</type>
+				          	<eval>trim</eval>
+				            <default>1</default>
+				        </config>
+					</TCEforms>
+				</settings.show_link>
+				<settings.link_text>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.link_text</label>
+						<displayCond>FIELD:settings.show_link:=:1</displayCond>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim</eval>
+				        	<default>Follow Me</default>
+				        </config>
+					</TCEforms>
+				</settings.link_text>
+			</el>
+		</ROOT>
+	</configuration>
+	<!--
+		################################
+		  SHEET Additional
+		################################
+	-->
+	<additional>
+		<ROOT>
+			<TCEforms>
+				<sheetTitle>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.additional</sheetTitle>
+			</TCEforms>
+			<type>array</type>
+			<el>
+				<settings.style_option>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.style_option</label>
+						<onChange>reload</onChange>
+						<config>
+							<type>select</type>
+							<items>
+								<numIndex index="0" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.style_option.0</numIndex>
+									<numIndex index="1">cascade</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.style_option.1</numIndex>
+									<numIndex index="1">vertical</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.style_option.2</numIndex>
+									<numIndex index="1">windows</numIndex>
+								</numIndex>
+								<numIndex index="3" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.style_option.3</numIndex>
+									<numIndex index="1">wall</numIndex>
+								</numIndex>
+								<numIndex index="4" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.style_option.4</numIndex>
+									<numIndex index="1">gallery</numIndex>
+								</numIndex>
+							</items>
+						</config>
+					</TCEforms>
+				</settings.style_option>
+				<settings.noofimage>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.noofimage</label>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim</eval>
+				            <default>5</default>
+				        </config>
+					</TCEforms>
+				</settings.noofimage>
+				<settings.photo_size>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.photo_size</label>
+						<config>
+							<type>select</type>
+							<items>
+								<numIndex index="0" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.photo_size.0</numIndex>
+									<numIndex index="1">large</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.photo_size.1</numIndex>
+									<numIndex index="1">medium</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.photo_size.2</numIndex>
+									<numIndex index="1">thumb</numIndex>
+								</numIndex>
+							</items>
+						</config>
+					</TCEforms>
+				</settings.photo_size>
+				<settings.img_per_row>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.img_per_row</label>
+						<displayCond>FIELD:settings.style_option:IN:wall,gallery</displayCond>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim,required</eval>
+				            <default>4</default>
+				        </config>
+					</TCEforms>
+				</settings.img_per_row>
+				<settings.cols>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.cols</label>
+						<displayCond>FIELD:settings.style_option:=:cascade</displayCond>
+						<config>
+							<type>select</type>
+							<items>
+								<numIndex index="0" type="array">
+									<numIndex index="0">1</numIndex>
+									<numIndex index="1">1</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">2</numIndex>
+									<numIndex index="1">2</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="0">3</numIndex>
+									<numIndex index="1">3</numIndex>
+								</numIndex>
+								<numIndex index="3" type="array">
+									<numIndex index="0">4</numIndex>
+									<numIndex index="1">4</numIndex>
+								</numIndex>
+								<numIndex index="4" type="array">
+									<numIndex index="0">5</numIndex>
+									<numIndex index="1">5</numIndex>
+								</numIndex>
+								<numIndex index="5" type="array">
+									<numIndex index="0">6</numIndex>
+									<numIndex index="1">6</numIndex>
+								</numIndex>
+								<numIndex index="6" type="array">
+									<numIndex index="0">7</numIndex>
+									<numIndex index="1">7</numIndex>
+								</numIndex>
+								<numIndex index="7" type="array">
+									<numIndex index="0">8</numIndex>
+									<numIndex index="1">8</numIndex>
+								</numIndex>
+								<numIndex index="8" type="array">
+									<numIndex index="0">9</numIndex>
+									<numIndex index="1">9</numIndex>
+								</numIndex>
+								<numIndex index="9" type="array">
+									<numIndex index="0">10</numIndex>
+									<numIndex index="1">10</numIndex>
+								</numIndex>
+							</items>
+						</config>
+					</TCEforms>
+				</settings.cols>
+				<settings.ratio_width>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.ratio_width</label>
+						<displayCond>FIELD:settings.style_option:=:gallery</displayCond>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim</eval>
+				            <default>800</default>
+				        </config>
+					</TCEforms>
+				</settings.ratio_width>
+				<settings.ratio_height>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.ratio_height</label>
+						<displayCond>FIELD:settings.style_option:=:gallery</displayCond>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim</eval>
+				            <default>600</default>
+				        </config>
+					</TCEforms>
+				</settings.ratio_height>
+				<settings.shadow>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.shadow</label>
+						<config>
+				          	<type>check</type>
+				            <eval>trim</eval>
+				        </config>
+					</TCEforms>
+				</settings.shadow>
+				<settings.border>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.border</label>
+						<config>
+				          	<type>check</type>
+				            <eval>trim</eval>
+				        </config>
+					</TCEforms>
+				</settings.border>
+				<settings.highlight>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.highlight</label>
+						<onChange>reload</onChange>
+						<config>
+				          	<type>check</type>
+				            <eval>trim</eval>
+				        </config>
+					</TCEforms>
+				</settings.highlight>
+				<settings.highlight_color>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.highlight_color</label>
+						<displayCond>FIELD:settings.highlight:=:1</displayCond>
+						<config>
+                            <type>input</type>
+                            <size>20</size>
+                            <eval>trim</eval>
+                            <wizards type="array">
+                                <colorChoice type="array">
+                                    <type>colorbox</type>
+                                    <title>Select Color</title>
+                                    <module type="array">
+                                        <name>wizard_colorpicker</name>
+                                    </module>
+                                    <JSopenParams>height=600,width=380,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                </colorChoice>
+                            </wizards>
+                            <default>#FFFFFF</default>
+                            <placeholder>E.g. #ffffff</placeholder>
+                        </config>
+					</TCEforms>
+				</settings.highlight_color>
+				<settings.curve>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.curve</label>
+						<config>
+				          	<type>check</type>
+				            <eval>trim</eval>
+				        </config>
+					</TCEforms>
+				</settings.curve>
+			</el>
+		</ROOT>
+	</additional>
+
+	<!--
+		################################
+		  SHEET Additional
+		################################
+	-->
+	<format>
+		<ROOT>
+			<TCEforms>
+				<sheetTitle>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.format</sheetTitle>
+			</TCEforms>
+			<type>array</type>
+			<el>
+				
+				<settings.align>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.align</label>
+						<config>
+							<type>select</type>
+							<items>
+								<numIndex index="0" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.align.0</numIndex>
+									<numIndex index="1">left</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.align.1</numIndex>
+									<numIndex index="1">center</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.align.2</numIndex>
+									<numIndex index="1">right</numIndex>
+								</numIndex>
+							</items>
+						</config>
+					</TCEforms>
+				</settings.align>
+				<settings.max_width>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.max_width</label>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim</eval>
+				            <default>100</default>
+				        </config>
+					</TCEforms>
+				</settings.max_width>
+			</el>
+		</ROOT>
+	</format>
+</sheets>
+</T3DataStructure>

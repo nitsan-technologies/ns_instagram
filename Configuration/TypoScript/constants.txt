@@ -1,0 +1,43 @@
+
+plugin.tx_nsinstagram_feed {
+  view {
+    # cat=plugin.tx_nsinstagram_feed/file; type=string; label=Path to template root (FE)
+    templateRootPath = EXT:ns_instagram/Resources/Private/Templates/
+    # cat=plugin.tx_nsinstagram_feed/file; type=string; label=Path to template partials (FE)
+    partialRootPath = EXT:ns_instagram/Resources/Private/Partials/
+    # cat=plugin.tx_nsinstagram_feed/file; type=string; label=Path to template layouts (FE)
+    layoutRootPath = EXT:ns_instagram/Resources/Private/Layouts/
+  }
+  settings{
+
+    #cat=plugin.tx_nsinstagram_feed/100; type=string; label=LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.accessToken
+    accessToken = 
+
+    javascript{
+      # cat=plugin.tx_nsinstagram_feed/a; type=boolean; label= LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:jquery
+      jquery = 0
+    }    
+  }
+}
+
+plugin.tx_nsinstagram_phototile {
+  view {
+    # cat=plugin.tx_nsinstagram_phototile/file; type=string; label=Path to template root (FE)
+    templateRootPath = EXT:ns_instagram/Resources/Private/Templates/
+    # cat=plugin.tx_nsinstagram_phototile/file; type=string; label=Path to template partials (FE)
+    partialRootPath = EXT:ns_instagram/Resources/Private/Partials/
+    # cat=plugin.tx_nsinstagram_phototile/file; type=string; label=Path to template layouts (FE)
+    layoutRootPath = EXT:ns_instagram/Resources/Private/Layouts/
+  }
+  settings {
+
+    #cat=plugin.tx_nsinstagram_phototile/100; type=string; label=LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.accessToken
+    accessToken = 
+
+    javascript{
+      # cat=plugin.tx_nsinstagram_phototile/a; type=boolean; label= LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:jquery
+      jquery = 0
+    }  
+  }
+
+}

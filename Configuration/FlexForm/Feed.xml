@@ -1,0 +1,809 @@
+<T3DataStructure>
+<meta>
+	<langDisable>1</langDisable>
+</meta>
+<sheets>
+	<!--
+		################################
+		  SHEET General Settings
+		################################
+	-->
+	<sDEF>
+		<ROOT>
+			<TCEforms>
+				<sheetTitle>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.sheetTitle</sheetTitle>
+			</TCEforms>
+			<type>array</type>
+			<el>
+				<settings.displayFeedMode>
+				    <TCEforms>
+				        <label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.displayFeedMode</label>
+				        <onChange>reload</onChange>
+				        <config>
+				            <type>radio</type>
+				            <items type="array">
+				                <numIndex index="0" type="array">
+				                    <numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.displayFeedMode.0</numIndex>
+				                    <numIndex index="1">user</numIndex>
+				                </numIndex>
+				                <numIndex index="1" type="array">
+				                    <numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.displayFeedMode.1</numIndex>
+				                    <numIndex index="1">hashtag</numIndex>
+				                </numIndex>
+				            </items>
+				            <default>0</default>
+				            <eval>trim,required</eval>
+				        </config>
+				    </TCEforms>
+				</settings.displayFeedMode>
+				<settings.username>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.username</label>
+						<displayCond>FIELD:settings.displayFeedMode:=:user</displayCond>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim</eval>
+				            <placeholder>Eg:username</placeholder>
+				        </config>
+					</TCEforms>
+				</settings.username>
+				<settings.tagged>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.tagged</label>
+						<displayCond>FIELD:settings.displayFeedMode:=:hashtag</displayCond>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim</eval>
+				            <placeholder>Eg:balloon</placeholder>
+				        </config>
+					</TCEforms>
+				</settings.tagged>
+			</el>
+		</ROOT>
+	</sDEF>
+	<!--
+		################################
+		  SHEET General Settings
+		################################
+	-->
+	<feedSetting>
+		<ROOT>
+			<TCEforms>
+				<sheetTitle>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.feedSetting</sheetTitle>
+			</TCEforms>
+			<type>array</type>
+			<el>
+				<settings.width>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.width</label>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim</eval>
+				        </config>
+					</TCEforms>
+				</settings.width>
+				<settings.widthunit>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.widthunit</label>
+						<config>
+							<type>select</type>
+							<items>
+								<numIndex index="0" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.unit.0</numIndex>
+									<numIndex index="1">px</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.unit.1</numIndex>
+									<numIndex index="1">%</numIndex>
+								</numIndex>
+							</items>
+						</config>
+					</TCEforms>
+				</settings.widthunit>
+				<settings.height>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.height</label>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim</eval>
+				        </config>
+					</TCEforms>
+				</settings.height>
+				<settings.heightunit>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.heightunit</label>
+						<config>
+							<type>select</type>
+							<items>
+								<numIndex index="0" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.unit.0</numIndex>
+									<numIndex index="1">px</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.unit.1</numIndex>
+									<numIndex index="1">%</numIndex>
+								</numIndex>
+							</items>
+						</config>
+					</TCEforms>
+				</settings.heightunit>
+				<settings.background>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.background</label>
+						<config>
+                            <type>input</type>
+                            <size>10</size>
+                            <eval>trim</eval>
+                            <wizards type="array">
+                                <colorChoice type="array">
+                                    <type>colorbox</type>
+                                    <title>Select Color</title>
+                                    <module type="array">
+                                        <name>wizard_colorpicker</name>
+                                    </module>
+                                    <JSopenParams>height=600,width=380,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                </colorChoice>
+                            </wizards>
+                        </config>
+					</TCEforms>
+				</settings.background>
+				<settings.num>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.num</label>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim</eval>
+				        </config>
+					</TCEforms>
+				</settings.num>
+				<settings.sortby>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.sortby</label>
+						<config>
+							<type>select</type>
+							<items>
+								<numIndex index="0" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.sortby.0</numIndex>
+									<numIndex index="1">none</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.sortby.1</numIndex>
+									<numIndex index="1">random</numIndex>
+								</numIndex>
+							</items>
+						</config>
+					</TCEforms>
+				</settings.sortby>
+				<settings.imageres>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.imageres</label>
+						<config>
+							<type>select</type>
+							<items>
+								<numIndex index="0" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.imageres.0</numIndex>
+									<numIndex index="1">medium</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.imageres.1</numIndex>
+									<numIndex index="1">auto</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.imageres.2</numIndex>
+									<numIndex index="1">full</numIndex>
+								</numIndex>
+								<numIndex index="3" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.imageres.3</numIndex>
+									<numIndex index="1">thumb</numIndex>
+								</numIndex>
+							</items>
+						</config>
+					</TCEforms>
+				</settings.imageres>
+				<settings.imagepadding>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.imagepadding</label>
+						<config>
+				          	<type>input</type>
+				            <size>20</size>
+				            <eval>trim</eval>
+				        </config>
+					</TCEforms>
+				</settings.imagepadding>
+				<settings.imagepaddingunit>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.imagepaddingunit</label>
+						<config>
+							<type>select</type>
+							<items>
+								<numIndex index="0" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.unit.0</numIndex>
+									<numIndex index="1">px</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.unit.1</numIndex>
+									<numIndex index="1">%</numIndex>
+								</numIndex>
+							</items>
+						</config>
+					</TCEforms>
+				</settings.imagepaddingunit>
+				<settings.cols>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.cols</label>
+						<config>
+							<type>select</type>
+							<items>
+								<numIndex index="0" type="array">
+									<numIndex index="0">1</numIndex>
+									<numIndex index="1">1</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">2</numIndex>
+									<numIndex index="1">2</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="0">3</numIndex>
+									<numIndex index="1">3</numIndex>
+								</numIndex>
+								<numIndex index="3" type="array">
+									<numIndex index="0">4</numIndex>
+									<numIndex index="1">4</numIndex>
+								</numIndex>
+								<numIndex index="4" type="array">
+									<numIndex index="0">5</numIndex>
+									<numIndex index="1">5</numIndex>
+								</numIndex>
+								<numIndex index="5" type="array">
+									<numIndex index="0">6</numIndex>
+									<numIndex index="1">6</numIndex>
+								</numIndex>
+								<numIndex index="6" type="array">
+									<numIndex index="0">7</numIndex>
+									<numIndex index="1">7</numIndex>
+								</numIndex>
+								<numIndex index="7" type="array">
+									<numIndex index="0">8</numIndex>
+									<numIndex index="1">8</numIndex>
+								</numIndex>
+								<numIndex index="8" type="array">
+									<numIndex index="0">9</numIndex>
+									<numIndex index="1">9</numIndex>
+								</numIndex>
+								<numIndex index="9" type="array">
+									<numIndex index="0">10</numIndex>
+									<numIndex index="1">10</numIndex>
+								</numIndex>
+							</items>
+							<default>4</default>
+						</config>
+					</TCEforms>
+				</settings.cols>
+				<settings.showheader>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.showheader</label>
+						<onChange>reload</onChange>
+						<config>
+				          	<type>check</type>
+				            <size>20</size>
+				            <default>0</default>
+				            <eval>trim</eval>
+				        </config>
+					</TCEforms>
+				</settings.showheader>
+				<settings.headerstyle>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.headerstyle</label>
+						<displayCond>FIELD:settings.showheader:=:1</displayCond>
+						<onChange>reload</onChange>
+						<config>
+							<type>select</type>
+							<items>
+								<numIndex index="0" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.headerstyle.0</numIndex>
+									<numIndex index="1">circle</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.headerstyle.1</numIndex>
+									<numIndex index="1">boxed</numIndex>
+								</numIndex>
+							</items>
+						</config>
+					</TCEforms>
+				</settings.headerstyle>
+				<settings.headerprimarycolor>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.headerprimarycolor</label>
+						<displayCond>FIELD:settings.headerstyle:=:boxed</displayCond>
+						<config>
+                            <type>input</type>
+                            <size>10</size>
+                            <eval>trim</eval>
+                            <wizards type="array">
+                                <colorChoice type="array">
+                                    <type>colorbox</type>
+                                    <title>Select Color</title>
+                                    <module type="array">
+                                        <name>wizard_colorpicker</name>
+                                    </module>
+                                    <JSopenParams>height=600,width=380,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                </colorChoice>
+                            </wizards>
+                        </config>
+					</TCEforms>
+				</settings.headerprimarycolor>
+				<settings.headersecondarycolor>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.headersecondarycolor</label>
+						<displayCond>FIELD:settings.headerstyle:=:boxed</displayCond>
+						<config>
+                            <type>input</type>
+                            <size>10</size>
+                            <eval>trim</eval>
+                            <wizards type="array">
+                                <colorChoice type="array">
+                                    <type>colorbox</type>
+                                    <title>Select Color</title>
+                                    <module type="array">
+                                        <name>wizard_colorpicker</name>
+                                    </module>
+                                    <JSopenParams>height=600,width=380,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                </colorChoice>
+                            </wizards>
+                        </config>
+					</TCEforms>
+				</settings.headersecondarycolor>
+				<settings.headercolor>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.headercolor</label>
+						<displayCond>FIELD:settings.showheader:=:1</displayCond>
+						<config>
+                            <type>input</type>
+                            <size>10</size>
+                            <eval>trim</eval>
+                            <wizards type="array">
+                                <colorChoice type="array">
+                                    <type>colorbox</type>
+                                    <title>Select Color</title>
+                                    <module type="array">
+                                        <name>wizard_colorpicker</name>
+                                    </module>
+                                    <JSopenParams>height=600,width=380,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                </colorChoice>
+                            </wizards>
+                        </config>
+					</TCEforms>
+				</settings.headercolor>
+				<settings.showbio>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.showbio</label>
+						<displayCond>FIELD:settings.showheader:=:1</displayCond>
+						<config>
+							<type>check</type>
+							<size>20</size>
+				            <default>0</default>
+				            <eval>trim</eval>
+						</config>
+					</TCEforms>
+				</settings.showbio>
+				<settings.numfollow>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.numfollow</label>
+						<displayCond>FIELD:settings.showheader:=:1</displayCond>
+						<config>
+							<type>check</type>
+							<size>20</size>
+				            <default>0</default>
+				            <eval>trim</eval>
+						</config>
+					</TCEforms>
+				</settings.numfollow>
+			</el>
+		</ROOT>
+	</feedSetting>
+	<!--
+		################################
+		  SHEET Additional
+		################################
+	-->
+	<additional>
+		<ROOT>
+			<TCEforms>
+				<sheetTitle>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.additionalTitle</sheetTitle>
+			</TCEforms>
+			<type>array</type>
+			<el>
+				<settings.hoverdisplay>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.hoverdisplay</label>
+						<config>
+							<type>select</type>
+                            <renderType>selectMultipleSideBySide</renderType>
+                            <items>
+                            	<numIndex index="0" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.hoverdisplay.0</numIndex>
+									<numIndex index="1">username</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.hoverdisplay.1</numIndex>
+									<numIndex index="1">icon</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.hoverdisplay.2</numIndex>
+									<numIndex index="1">date</numIndex>
+								</numIndex>
+								<numIndex index="3" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.hoverdisplay.3</numIndex>
+									<numIndex index="1">instagram</numIndex>
+								</numIndex>
+								<numIndex index="4" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.hoverdisplay.4</numIndex>
+									<numIndex index="1">likes</numIndex>
+								</numIndex>
+								<numIndex index="5" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.hoverdisplay.5</numIndex>
+									<numIndex index="1">caption</numIndex>
+								</numIndex>
+                            </items>
+                            <minitems>0</minitems>
+							<maxitems>999</maxitems>
+						</config>
+					</TCEforms>
+				</settings.hoverdisplay>
+				<settings.hovercolor>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.hovercolor</label>
+						<config>
+							<type>input</type>
+                            <size>10</size>
+                            <eval>trim</eval>
+                            <wizards type="array">
+                                <colorChoice type="array">
+                                    <type>colorbox</type>
+                                    <title>Select Color</title>
+                                    <module type="array">
+                                        <name>wizard_colorpicker</name>
+                                    </module>
+                                    <JSopenParams>height=600,width=380,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                </colorChoice>
+                            </wizards>
+						</config>
+					</TCEforms>
+				</settings.hovercolor>
+				<settings.hovertextcolor>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.hovertextcolor</label>
+						<config>
+							<type>input</type>
+                            <size>10</size>
+                            <eval>trim</eval>
+                            <wizards type="array">
+                                <colorChoice type="array">
+                                    <type>colorbox</type>
+                                    <title>Select Color</title>
+                                    <module type="array">
+                                        <name>wizard_colorpicker</name>
+                                    </module>
+                                    <JSopenParams>height=600,width=380,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                </colorChoice>
+                            </wizards>
+						</config>
+					</TCEforms>
+				</settings.hovertextcolor>
+				<settings.showbutton>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.showbutton</label>
+						<onChange>reload</onChange>
+						<config>
+							<type>check</type>
+							<size>20</size>
+				            <default>1</default>
+				            <eval>trim</eval>
+						</config>
+					</TCEforms>
+				</settings.showbutton>
+				<settings.buttontext>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.buttontext</label>
+						<displayCond>FIELD:settings.showbutton:=:1</displayCond>
+						<config>
+							<type>input</type>
+							<size>20</size>
+				            <eval>trim</eval>
+				            <default>Load More</default>
+						</config>
+					</TCEforms>
+				</settings.buttontext>
+				<settings.buttoncolor>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.buttoncolor</label>
+						<displayCond>FIELD:settings.showbutton:=:1</displayCond>
+						<config>
+                            <type>input</type>
+                            <size>10</size>
+                            <eval>trim</eval>
+                            <wizards type="array">
+                                <colorChoice type="array">
+                                    <type>colorbox</type>
+                                    <title>Select Color</title>
+                                    <module type="array">
+                                        <name>wizard_colorpicker</name>
+                                    </module>
+                                    <JSopenParams>height=600,width=380,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                </colorChoice>
+                            </wizards>
+                            <default>#333333</default>
+                        </config>
+					</TCEforms>
+				</settings.buttoncolor>
+				<settings.buttontextcolor>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.buttontextcolor</label>
+						<displayCond>FIELD:settings.showbutton:=:1</displayCond>
+						<config>
+                            <type>input</type>
+                            <size>10</size>
+                            <eval>trim</eval>
+                            <wizards type="array">
+                                <colorChoice type="array">
+                                    <type>colorbox</type>
+                                    <title>Select Color</title>
+                                    <module type="array">
+                                        <name>wizard_colorpicker</name>
+                                    </module>
+                                    <JSopenParams>height=600,width=380,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                </colorChoice>
+                            </wizards>
+                            <default>#ffffff</default>
+                        </config>
+					</TCEforms>
+				</settings.buttontextcolor>
+				<settings.showfollow>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.showfollow</label>
+						<onChange>reload</onChange>
+						<config>
+							<type>check</type>
+							<size>20</size>
+				            <default>1</default>
+				            <eval>trim</eval>
+						</config>
+					</TCEforms>
+				</settings.showfollow>
+				<settings.followtext>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.followtext</label>
+						<displayCond>FIELD:settings.showfollow:=:1</displayCond>
+						<config>
+							<type>input</type>
+							<size>20</size>
+				            <eval>trim</eval>
+				            <default>Follows on Instagram!</default>
+						</config>
+					</TCEforms>
+				</settings.followtext>
+				<settings.followcolor>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.followcolor</label>
+						<displayCond>FIELD:settings.showfollow:=:1</displayCond>
+						<config>
+                            <type>input</type>
+                            <size>10</size>
+                            <eval>trim</eval>
+                            <wizards type="array">
+                                <colorChoice type="array">
+                                    <type>colorbox</type>
+                                    <title>Select Color</title>
+                                    <module type="array">
+                                        <name>wizard_colorpicker</name>
+                                    </module>
+                                    <JSopenParams>height=600,width=380,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                </colorChoice>
+                            </wizards>
+                            <default>#517fa4</default>
+                        </config>
+					</TCEforms>
+				</settings.followcolor>
+				<settings.followtextcolor>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.followtextcolor</label>
+						<displayCond>FIELD:settings.showfollow:=:1</displayCond>
+						<config>
+                            <type>input</type>
+                            <size>10</size>
+                            <eval>trim</eval>
+                            <wizards type="array">
+                                <colorChoice type="array">
+                                    <type>colorbox</type>
+                                    <title>Select Color</title>
+                                    <module type="array">
+                                        <name>wizard_colorpicker</name>
+                                    </module>
+                                    <JSopenParams>height=600,width=380,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                </colorChoice>
+                            </wizards>
+                            <default>#ffffff</default>
+                        </config>
+					</TCEforms>
+				</settings.followtextcolor>
+				<settings.showcaption>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.showcaption</label>
+						<onChange>reload</onChange>
+						<config>
+							<type>check</type>
+							<size>20</size>
+				            <default>0</default>
+				            <eval>trim</eval>
+						</config>
+					</TCEforms>
+				</settings.showcaption>
+				<settings.captionlength>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.captionlength</label>
+						<displayCond>FIELD:settings.showcaption:=:1</displayCond>
+						<config>
+							<type>input</type>
+							<size>20</size>
+				            <eval>trim</eval>
+				            <default>25</default>
+						</config>
+					</TCEforms>
+				</settings.captionlength>
+				<settings.captioncolor>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.captioncolor</label>
+						<displayCond>FIELD:settings.showcaption:=:1</displayCond>
+						<config>
+                            <type>input</type>
+                            <size>10</size>
+                            <eval>trim</eval>
+                            <wizards type="array">
+                                <colorChoice type="array">
+                                    <type>colorbox</type>
+                                    <title>Select Color</title>
+                                    <module type="array">
+                                        <name>wizard_colorpicker</name>
+                                    </module>
+                                    <JSopenParams>height=600,width=380,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                </colorChoice>
+                            </wizards>
+                            <default>#990000</default>
+                        </config>
+					</TCEforms>
+				</settings.captioncolor>
+				<settings.captionsize>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.captionsize</label>
+						<displayCond>FIELD:settings.showcaption:=:1</displayCond>
+						<config>
+                            <type>input</type>
+                            <size>10</size>
+                            <eval>trim</eval>
+                            <default>12</default>
+                        </config>
+					</TCEforms>
+				</settings.captionsize>
+				<settings.showlikes>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.showlikes</label>
+						<onChange>reload</onChange>
+						<config>
+							<type>check</type>
+							<size>20</size>
+				            <default>1</default>
+				            <eval>trim</eval>
+						</config>
+					</TCEforms>
+				</settings.showlikes>
+				<settings.likescolor>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.likescolor</label>
+						<displayCond>FIELD:settings.showlikes:=:1</displayCond>
+						<config>
+                            <type>input</type>
+                            <size>10</size>
+                            <eval>trim</eval>
+                            <wizards type="array">
+                                <colorChoice type="array">
+                                    <type>colorbox</type>
+                                    <title>Select Color</title>
+                                    <module type="array">
+                                        <name>wizard_colorpicker</name>
+                                    </module>
+                                    <JSopenParams>height=600,width=380,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                </colorChoice>
+                            </wizards>
+                            <default>#ff9999</default>
+                        </config>
+					</TCEforms>
+				</settings.likescolor>
+				<settings.likessize>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.likessize</label>
+						<displayCond>FIELD:settings.showlikes:=:1</displayCond>
+						<config>
+							<type>input</type>
+							<size>20</size>
+				            <eval>trim</eval>
+				            <default>11</default>
+						</config>
+					</TCEforms>
+				</settings.likessize>
+			</el>
+		</ROOT>
+	</additional>
+
+	<!--
+		################################
+		  SHEET Additional
+		################################
+	-->
+	<carousel>
+		<ROOT>
+			<TCEforms>
+				<sheetTitle>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.carouselSetting</sheetTitle>
+			</TCEforms>
+			<type>array</type>
+			<el>
+				<settings.carousel>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.carousel</label>
+						<onChange>reload</onChange>
+						<config>
+				          	<type>check</type>
+				        </config>
+					</TCEforms>
+				</settings.carousel>
+				<settings.carouselarrows>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.carouselarrows</label>
+						<displayCond>FIELD:settings.carousel:=:1</displayCond>
+						<config>
+				          	<type>check</type>
+				          	<default>0</default>
+				        </config>
+					</TCEforms>
+				</settings.carouselarrows>
+				<settings.carouselpag>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.carouselpag</label>
+						<displayCond>FIELD:settings.carousel:=:1</displayCond>
+						<config>
+				          	<type>check</type>
+				          	<default>0</default>
+				        </config>
+					</TCEforms>
+				</settings.carouselpag>
+				<settings.carouselautoplay>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.carouselautoplay</label>
+						<displayCond>FIELD:settings.carousel:=:1</displayCond>
+						<config>
+				          	<type>check</type>
+				          	<default>0</default>
+				        </config>
+					</TCEforms>
+				</settings.carouselautoplay>
+				<settings.carouseltime>
+					<TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.carouseltime</label>
+						<displayCond>FIELD:settings.carousel:=:1</displayCond>
+						<config>
+				          	<type>input</type>
+				          	<size>30</size>
+				          	<eval>trim</eval>
+				          	<default>5000</default>
+				        </config>
+					</TCEforms>
+				</settings.carouseltime>
+			</el>
+		</ROOT>
+	</carousel>
+</sheets>
+</T3DataStructure>

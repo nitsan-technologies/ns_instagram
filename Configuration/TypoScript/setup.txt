@@ -1,0 +1,34 @@
+
+plugin.tx_nsinstagram_feed {
+  view {
+    templateRootPaths.0 = EXT:ns_instagram/Resources/Private/Templates/
+    templateRootPaths.1 = {$plugin.tx_nsinstagram_feed.view.templateRootPath}
+    partialRootPaths.0 = EXT:ns_instagram/Resources/Private/Partials/
+    partialRootPaths.1 = {$plugin.tx_nsinstagram_feed.view.partialRootPath}
+    layoutRootPaths.0 = EXT:ns_instagram/Resources/Private/Layouts/
+    layoutRootPaths.1 = {$plugin.tx_nsinstagram_feed.view.layoutRootPath}
+  }
+  settings {
+    accessToken = {$plugin.tx_nsinstagram_feed.settings.accessToken}
+    javascript{
+      jquery = {$plugin.tx_nsinstagram_feed.settings.javascript.jquery}
+    }
+  }
+}
+
+plugin.tx_nsinstagram_phototile {
+  view {
+    templateRootPaths.0 = EXT:ns_instagram/Resources/Private/Templates/
+    templateRootPaths.1 = {$plugin.tx_nsinstagram_phototile.view.templateRootPath}
+    partialRootPaths.0 = EXT:ns_instagram/Resources/Private/Partials/
+    partialRootPaths.1 = {$plugin.tx_nsinstagram_phototile.view.partialRootPath}
+    layoutRootPaths.0 = EXT:ns_instagram/Resources/Private/Layouts/
+    layoutRootPaths.1 = {$plugin.tx_nsinstagram_phototile.view.layoutRootPath}
+  }
+  settings {
+    accessToken = {$plugin.tx_nsinstagram_phototile.settings.accessToken}
+    javascript{
+      jquery = {$plugin.tx_nsinstagram_phototile.settings.javascript.jquery}
+    }
+  }
+}
