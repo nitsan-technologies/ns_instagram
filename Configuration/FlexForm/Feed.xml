@@ -29,7 +29,7 @@
 				                <!-- <numIndex index="1" type="array">
 				                    <numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.displayFeedMode.1</numIndex>
 				                    <numIndex index="1">hashtag</numIndex>
-				                </numIndex> -->
+				                </numIndex> --> 
 				            </items>
 				            <default>0</default>
 				            <eval>trim,required</eval>
