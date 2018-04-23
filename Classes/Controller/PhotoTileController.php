@@ -74,7 +74,7 @@ class PhotoTileController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
     $title = $data['header'];
     
     try{
-      $user_id  = $this->getInstaID($this->settings['user']);
+      $user_id  = $this->get_insta_id($this->settings['user']);
       $request = $this->get_instagram_setting($token,$user_id,$num);
       if( $request ) {
         $photos = $this->get_json($request, $num);
@@ -129,7 +129,7 @@ class PhotoTileController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
   }
   
   // Get Instagram userId from username
-  function getInstaID( $username ) {
+  function get_insta_id( $username ) {
       $username = strtolower( $username );     
       $url = "https://www.instagram.com/".trim($username)."/";
 
@@ -141,8 +141,7 @@ class PhotoTileController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
       $shards = explode( 'window._sharedData = ', $body);
       $json = explode( ';</script>', $shards[1] );
       $data = json_decode( $json[0], TRUE );
-
-      $user_id = $data['entry_data']['ProfilePage'][0]['user']['id'];
+      $user_id = $data['entry_data']['ProfilePage'][0]['graphql']['user']['id'];
       return $user_id;     
   }
 

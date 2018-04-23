@@ -1,6 +1,5 @@
 <?php
 namespace NS\NsInstagram\Controller;
-
 /***************************************************************
  *
  *  Copyright notice
@@ -209,7 +208,7 @@ class FeedController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $shards = explode( 'window._sharedData = ', $body);
         $json = explode( ';</script>', $shards[1] );
         $data = json_decode( $json[0], TRUE );
-        $user_id = $data['entry_data']['ProfilePage'][0]['user']['id'];
+        $user_id = $data['entry_data']['ProfilePage'][0]['graphql']['user']['id'];
         return $user_id;
     }
 

@@ -52,7 +52,7 @@
 				                    <numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.source.0</numIndex>
 				                    <numIndex index="1">user_recent</numIndex>
 				                </numIndex>
-				                <numIndex index="2" type="array">
+				                <!-- <numIndex index="2" type="array">
 				                    <numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.source.1</numIndex>
 				                    <numIndex index="1">user_liked</numIndex>
 				                </numIndex>
@@ -63,7 +63,7 @@
 				                <numIndex index="5" type="array">
 				                    <numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.source.3</numIndex>
 				                    <numIndex index="1">global_tag</numIndex>
-				                </numIndex>
+				                </numIndex> -->
 				            </items>
 				        </config>
 					</TCEforms>
