@@ -38,7 +38,7 @@
 				</settings.displayFeedMode>
 				<settings.username>
 					<TCEforms>
-						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_feed.flexform.username</label>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_nsinstagram_phototile.flexform.user</label>
 						<displayCond>FIELD:settings.displayFeedMode:=:user</displayCond>
 						<config>
 				          	<type>input</type>
