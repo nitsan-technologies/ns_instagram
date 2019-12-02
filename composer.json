@@ -1,7 +1,7 @@
 {
   "name": "nitsan/ns-instagram",
   "type": "typo3-cms-extension",
-  "description": "Plugin to display gallery, feeds and phototile with clean, customizable and responsive feeds from multiple Instagram accounts.",
+  "description": "Plugin to display gallery, feeds and phototile with clean, customizable and responsive feeds from multiple Instagram accounts. Demo: https://demo.t3terminal.com/t3t-extensions/ You can download PRO version for more-features & free-support at https://t3terminal.com/typo3-instagram-plugin-free/",
   "homepage": "https://extensions.typo3.org/extension/ns_instagram/",
   "license": "GPL-2.0+",
   "keywords": [
@@ -22,7 +22,6 @@
     }
   },
   "replace": {
-      "ns_instagram": "self.version",
       "nitsan/ns-instagram": "self.version"
   },
   "config": {

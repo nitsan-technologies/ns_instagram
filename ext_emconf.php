@@ -1,8 +1,8 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => '[NITSAN] Plugin for Instagram',
-    'description' => 'Plugin to display gallery, feeds and phototile with clean, customizable and responsive feeds from multiple Instagram accounts.',
+    'title' => '[NITSAN] Instagram Plugin',
+    'description' => 'Plugin to display gallery, feeds and phototile with clean, customizable and responsive feeds from multiple Instagram accounts. Demo: https://demo.t3terminal.com/t3t-extensions/ You can download PRO version for more-features & free-support at https://t3terminal.com/typo3-instagram-plugin-free/',
     'category' => 'plugin',
     'author' => 'T3:Keval Pandya, QA:Vandna Kalivada',
 	'author_email' => 'sanjay@nitsan.in',
@@ -12,7 +12,7 @@ $EM_CONF[$_EXTKEY] = [
     'uploadfolder' => '0',
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '1.1.1',
+    'version' => '1.2.0',
     'constraints' => [
         'depends' => [
             'typo3' => '6.0.0-8.9.99',
