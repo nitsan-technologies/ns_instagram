@@ -1,38 +1,46 @@
 {
-  "name": "nitsan/ns-instagram",
-  "type": "typo3-cms-extension",
-  "description": "Plugin to display gallery, feeds and phototile with clean, customizable and responsive feeds from multiple Instagram accounts. Demo: https://demo.t3terminal.com/t3t-extensions/ You can download PRO version for more-features & free-support at https://t3terminal.com/typo3-instagram-plugin-free/",
-  "homepage": "https://extensions.typo3.org/extension/ns_instagram/",
-  "license": "GPL-2.0+",
-  "keywords": [
-    "TYPO3 CMS",
-    "Instragram",
-    "Nitsan",
-    "Social"
-  ],
-  "support": {
-    "issues": "https://github.com/nitsan-technologies/ns_instagram/issues"
-  },
-  "require": {
-    "typo3/cms-core": ">=6.2.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "NS\\NsInstagram\\": "Classes/"
+    "name": "nitsan/ns-instagram",
+    "type": "typo3-cms-extension",
+    "description": "Plugin to display gallery, feeds and phototile with clean, customizable and responsive feeds from multiple Instagram accounts. Demo: https://demo.t3terminal.com/t3t-extensions/ You can download PRO version for more-features & free-support at https://t3terminal.com/typo3-instagram-plugin-free/",
+    "homepage": "https://extensions.typo3.org/extension/ns_instagram/",
+    "license": "GPL-2.0+",
+    "keywords": [
+        "TYPO3 CMS",
+        "instagram",
+        "NITSAN",
+        "t3terminal",
+        "gallery",
+        "photos"
+    ],
+    "support": {
+        "issues": "https://github.com/nitsan-technologies/ns_instagram/issues"
+    },
+    "authors": [
+        {
+            "name": "T3:Bhavin Barad",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "NITSAN\\NsInstagram\\": "Classes"
+        }
+    },
+    "replace": {
+        "nitsan/ns-instagram": "self.version"
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor/",
+        "bin-dir": ".Build/bin/"
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/public",
+            "extension-key": "ns_comments"
+        }
     }
-  },
-  "replace": {
-      "nitsan/ns-instagram": "self.version"
-  },
-  "config": {
-    "vendor-dir": ".Build/vendor/",
-    "bin-dir": ".Build/bin/"
-  },
-  "extra": {
-    "typo3/cms": {
-        "cms-package-dir": "{$vendor-dir}/typo3/cms",
-        "web-dir": ".Build/public",
-        "extension-key": "ns_instagram"
-    }
-  }
 }

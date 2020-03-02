@@ -1,0 +1,186 @@
+<table class='table table-condensed table-hover'>
+    <thead>
+        <tr>
+            <th colspan='2'>
+                <f:translate key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_ns_instagram_instagramfeeds.name" />
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th style='text-align:left;'>
+                <f:translate key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.feedType" />
+            </th>
+            <td style='padding-left: 10px;'>
+                <f:translate key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.feedType.{flexformData.settings.feedType}" />
+            </td>
+        </tr>
+        <f:if condition="{flexformData.settings.feedType}=='javascriptview'">
+            <tr>
+                <th style='text-align:left;'>
+                    <f:translate
+                        key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.viewusing" />
+                </th>
+                <td style='padding-left: 10px;'>
+                    <f:translate
+                        key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.viewusing.{flexformData.settings.viewusing}" />
+                </td>
+            </tr>
+            <f:if condition="{flexformData.settings.viewusing}=='username'">
+                <f:then>
+                    <tr>
+                        <th style='text-align:left;'>
+                            <f:translate
+                                key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.viewusing.username" />
+                        </th>
+                        <td style='padding-left: 10px;'>
+                            {flexformData.settings.username}
+                        </td>
+                    </tr>
+                </f:then>
+                <f:else>
+                    <tr>
+                        <th style='text-align:left;'>
+                            <f:translate
+                                key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.hashtag" />
+                        </th>
+                        <td style='padding-left: 10px;'>
+                            {flexformData.settings.hashtag}
+                        </td>
+                    </tr>
+                </f:else>
+            </f:if>
+            <tr>
+                <th style='text-align:left;'>
+                    <f:translate
+                        key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.feedlisttype" />
+                </th>
+                <td style='padding-left: 10px;'>
+                    <f:translate
+                        key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.feedlisttype.{flexformData.settings.feedlisttype}" />
+                </td>
+            </tr>
+            <f:if condition="{flexformData.settings.display_profile}">
+                <tr>
+                    <th style='text-align:left;'>
+                        <f:translate key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.display_profile" />
+                    </th>
+                    <td style='padding-left: 10px;'><i class='fa fa-check'></i></td>
+                </tr>
+            </f:if>
+            <f:if condition="{flexformData.settings.display_profile} && {flexformData.settings.display_biography}">
+                <tr>
+                    <th style='text-align:left;'>
+                        <f:translate
+                            key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.display_biography" />
+                    </th>
+                    <td style='padding-left: 10px;'><i class='fa fa-check'></i></td>
+                </tr>
+            </f:if>
+            <f:if condition="{flexformData.settings.viewusing}!='username'">
+                <tr>
+                    <th style='text-align:left;'>
+                        <f:translate key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.items" />
+                    </th>
+                    <td style='padding-left: 10px;'>
+                        {flexformData.settings.items}
+                    </td>
+                </tr>
+            </f:if>
+            <tr>
+                <th style='text-align:left;'>
+                    <f:translate key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.items_per_row" />
+                </th>
+                <td style='padding-left: 10px;'>
+                    {flexformData.settings.items_per_row}
+                </td>
+            </tr>
+            <tr>
+                <th style='text-align:left;'>
+                    <f:translate key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.margin" />
+                </th>
+                <td style='padding-left: 10px;'>
+                    {flexformData.settings.margin}
+                </td>
+            </tr>
+        </f:if>
+
+        <f:if condition="{flexformData.settings.feedType}=='v1apiview'">
+            <tr>
+                <th style='text-align:left;'>
+                    <f:translate key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.items" />
+                </th>
+                <td style='padding-left: 10px;'>
+                    {flexformData.settings.v1items}
+                </td>
+            </tr>
+            <f:if condition="{flexformData.settings.v1display_profile}">
+                <tr>
+                    <th style='text-align:left;'>
+                        <f:translate
+                            key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.display_profile" />
+                    </th>
+                    <td style='padding-left: 10px;'><i class='fa fa-check'></i></td>
+                </tr>
+                <f:if condition="{flexformData.settings.v1display_followbtn}">
+                    <tr>
+                        <th style='text-align:left;'>
+                            <f:translate
+                                key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.display_followbtn" />
+                        </th>
+                        <td style='padding-left: 10px;'><i class='fa fa-check'></i></td>
+                    </tr>
+                </f:if>
+                <f:if condition="{flexformData.settings.v1display_biography}">
+                    <tr>
+                        <th style='text-align:left;'>
+                            <f:translate
+                                key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.display_biography" />
+                        </th>
+                        <td style='padding-left: 10px;'><i class='fa fa-check'></i></td>
+                    </tr>
+                </f:if>
+                <f:if condition="{flexformData.settings.v1display_website}">
+                    <tr>
+                        <th style='text-align:left;'>
+                            <f:translate
+                                key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.display_website" />
+                        </th>
+                        <td style='padding-left: 10px;'><i class='fa fa-check'></i></td>
+                    </tr>
+                </f:if>
+            </f:if>
+            <tr>
+                <th style='text-align:left;'>
+                    <f:translate
+                        key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.onclickpost" />
+                </th>
+                <td style='padding-left: 10px;'>
+                    <f:translate
+                        key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.onclickpost.{flexformData.settings.onclickpost}" />
+                </td>
+            </tr>
+        </f:if>
+
+        <f:if condition="{flexformData.settings.feedType}=='graphapiview'">
+            <tr>
+                <th style='text-align:left;'>
+                    <f:translate key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.items" />
+                </th>
+                <td style='padding-left: 10px;'>
+                    {flexformData.settings.graphitems}
+                </td>
+            </tr>
+        </f:if>
+        <tr>
+            <th style='text-align:left;'>
+                <f:translate
+                    key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.onclickpost" />
+            </th>
+            <td style='padding-left: 10px;'>
+                <f:translate
+                    key="LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.onclickpost.{flexformData.settings.graphonclickpost}" />
+            </td>
+        </tr>
+    </tbody>
+</table>

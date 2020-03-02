@@ -1,497 +1,106 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2017-03-25T15:33:05Z" product-name="ns_instagram">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-02-21T15:05:37Z" product-name="ns_instagram">
 		<header/>
 		<body>
-			
-			<trans-unit id="jquery">
-				<source>Add Jquery</source>
+			<trans-unit id="tx_nsinstagram_domain_model_instagramfeeds">
+				<source>Instagram Feed</source>
 			</trans-unit>
-
-			<!-- Image Gallary Plugin -->
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.sheetTitle">
-				<source>1.Configure</source>
+			<trans-unit id="tx_ns_instagram_instagramfeeds.name">
+				<source>Instagram Feed</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.title">
-				<source>Title</source>
+			<trans-unit id="tx_ns_instagram_instagramfeeds.description">
+				<source>Show instagram feed on your page using this plugin.</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.title-align">
-				<source>Title Alignment</source>
+			<trans-unit id="apiconfig" xml:space="preserve">
+				<source>API Configuration</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.title-align.0">
-				<source>Left</source>
+			<trans-unit id="apiconfig.v1api" xml:space="preserve">
+				<source>Add Instagram V1 API Access Token (api.instagram.com/v1/): Will required if you set Instagram V1 API in plugin option (To get token: https://quadlayers.com/insta-token/)</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.title-align.1">
-				<source>Center</source>
+			<trans-unit id="apiconfig.graphapi" xml:space="preserve">
+				<source>Add Instagram Basic Display API Access Token (graph.instagram.com): Will required if you set Instagram Basic Display API in plugin option (To get token: https://developers.facebook.com/docs/instagram-basic-display-api/getting-started)</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.title-align.2">
-				<source>Right</source>
+			<trans-unit id="settings.jquery" xml:space="preserve">
+				<source>Include jQuery Library</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.choice">
-				<source>Show gallary from :</source>
+			<trans-unit id="settings.fontawesome" xml:space="preserve">
+				<source>Include Fontawesome</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.choice.0">
+			<trans-unit id="settings.fancybox" xml:space="preserve">
+				<source>Include Fancybox</source>
+			</trans-unit>
+			<trans-unit id="settings.customcss" xml:space="preserve">
+				<source>Include Custom CSS</source>
+			</trans-unit>
+			<trans-unit id="flexform.setting">
+				<source>Feed Settings</source>
+			</trans-unit>
+			<trans-unit id="flexform.settings.feedType">
+				<source>Select Type</source>
+			</trans-unit>
+			<trans-unit id="flexform.settings.feedType.javascriptview">
+				<source>Show Feed using Javascript without API</source>
+			</trans-unit>
+			<trans-unit id="flexform.settings.feedType.v1apiview">
+				<source>Show Feed using Instagram V1 API</source>
+			</trans-unit>
+			<trans-unit id="flexform.settings.feedType.graphapiview">
+				<source>Show Feed using Instagram Basic Display API</source>
+			</trans-unit>
+			<trans-unit id="flexform.settings.viewusing">
+				<source>Show Gallary From</source>
+			</trans-unit>
+			<trans-unit id="flexform.settings.viewusing.username">
 				<source>Username</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.choice.1">
+			<trans-unit id="flexform.settings.viewusing.hashtag">
 				<source>Hashtag</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.username">
-				<source>Username</source>
+			<trans-unit id="flexform.settings.feedlisttype">
+				<source>Show Listing Of</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.show_infos">
-				<source>Show Information</source>
+			<trans-unit id="flexform.settings.feedlisttype.photos">
+				<source>Photos</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.tagged">
-				<source>Hashtag (Without using any special character)</source>
+			<trans-unit id="flexform.settings.feedlisttype.igtv">
+				<source>IGTV videos</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.additional">
-				<source>2. Customization</source>
+			<trans-unit id="flexform.settings.username">
+				<source>Username (Make sure entered username exists at instagram and should be insta username)</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.width">
-				<source>Width(in Pixel)</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.height">
-				<source>Height(in Pixel)</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.mode">
-				<source>Mode</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.mode.0">
-				<source>Grid</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.mode.1">
-				<source>Slideshow</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.imagepadding">
-				<source>Padding (in Pixel)</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.photo_border">
-				<source>Photo Border</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.background">
-				<source>The Background color of the Instagram Gallary (Leave Empty for transparent)</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.text">
-				<source>Text Color</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.widget_border">
-				<source>Widget Border</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.radius">
-				<source>Widget Border Radius(in Pixel)</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_imagegallery.flexform.border-color">
-				<source>Widget Border Color</source>
-			</trans-unit>
-			
-			<!-- Feed Flexform -->
-			<trans-unit id="tx_nsinstagram_feed.flexform.sheetTitle">
-				<source>Instagram Settings</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.user">
-				<source>Add Username</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.accessToken">
-				<source>Access Token : Change your setting in upparcase letter for get access token : https://www.instagram.com/oauth/authorize?client_id=CLIENT_ID&amp;redirect_uri=REDIRECT_URI&amp;scope=basic+public_content&amp;response_type=token</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.displayFeedMode">
-				<source>Show photos from :</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.displayFeedMode.0">
-				<source>Username</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.displayFeedMode.1">
+			<trans-unit id="flexform.settings.hashtag">
 				<source>Hashtag</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.username">
-				<source>Username</source>
+			<trans-unit id="flexform.settings.display_profile">
+				<source>Display Profile</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.tagged">
-				<source>Hashtag</source>
+			<trans-unit id="flexform.settings.display_biography">
+				<source>Display Biography</source>
 			</trans-unit>
-			<!-- Feed Flexform additional settings -->
-			<trans-unit id="tx_nsinstagram_feed.flexform.feedSetting">
-				<source>Configuration</source>
+			<trans-unit id="flexform.settings.display_followbtn">
+				<source>Display Follow Button</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.additionalTitle">
-				<source>More Configuration</source>
+			<trans-unit id="flexform.settings.display_website">
+				<source>Display Website</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.width">
-				<source>Width of Feed</source>
+			<trans-unit id="flexform.settings.items">
+				<source>Items</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.widthunit">
-				<source>Width Unit</source>
+			<trans-unit id="flexform.settings.items_per_row">
+				<source>Items Per Row</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.unit.0">
-				<source>Width in Pixel (px)</source>
+			<trans-unit id="flexform.settings.margin">
+				<source>Margin</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.unit.1">
-				<source>Width in percentage (%)</source>
+			<trans-unit id="flexform.settings.onclickpost.instagramlink">
+				<source>Open at Instagram</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.height">
-				<source>Height of Feed</source>
+			<trans-unit id="flexform.settings.onclickpost.popup">
+				<source>Open in Lightbox</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.heightunit">
-				<source>Height Unit</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.background">
-				<source>The Background color of the Instagram feed</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.num">
-				<source>Number Of Photos</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.sortby">
-				<source>Sort Photos By</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.sortby.0">
-				<source>Newest to Oldest (none)</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.sortby.1">
-				<source>Random</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.imageres">
-				<source>The resolution/size of the Instagram photos</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.imageres.0">
-				<source>Medium</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.imageres.1">
-				<source>Auto</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.imageres.2">
-				<source>Full</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.imageres.3">
-				<source>Thumb</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.imageres.4">
-				<source>Small</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.imagepadding">
-				<source>Padding Between Image</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.imagepaddingunit">
-				<source>Padding Unit</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.cols">
-				<source>Number Of Column</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.showheader">
-				<source>Show Header</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.headercolor">
-				<source>Header Text Color</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.headerstyle">
-				<source>Header Style</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.headerstyle.0">
-				<source>Circle</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.headerstyle.1">
-				<source>Boxed</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.headerprimarycolor">
-				<source>Header Primary Color</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.headersecondarycolor">
-				<source>Header Secondary Color</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.numfollow">
-				<source>Show Number Of Followers</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.showbio">
-				<source>Show Bio Text in Header</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.hoverdisplay">
-				<source>Hover Display Item</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.hoverdisplay.0">
-				<source>Username</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.hoverdisplay.1">
-				<source>Zoom Icon</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.hoverdisplay.2">
-				<source>Date</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.hoverdisplay.3">
-				<source>Instagram Icon</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.hoverdisplay.4">
-				<source>Likes</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.hoverdisplay.5">
-				<source>Caption</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.hovercolor">
-				<source>Hover Color</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.hovertextcolor">
-				<source>Hover Text Color</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.showbutton">
-				<source>Show Load More Button</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.buttontext">
-				<source>Button Text</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.buttoncolor">
-				<source>Button Background Color</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.buttontextcolor">
-				<source>Button Text Color</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.showfollow">
-				<source>Show Follow Button</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.followtext">
-				<source>Follow Button Text</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.followcolor">
-				<source>Button Background Color</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.followtextcolor">
-				<source>Button Text Color</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.showcaption">
-				<source>Show Caption</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.captionlength">
-				<source>Text Length</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.captioncolor">
-				<source>Text Color</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.captionsize">
-				<source>Text Size</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.showlikes">
-				<source>Show Like and Comment Icon</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.likescolor">
-				<source>Icon Color</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.likessize">
-				<source>Icon Size</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.carouselSetting">
-				<source>Carousel Setting</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.carousel">
-				<source>Carousel</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.carouselarrows">
-				<source>Show arrows</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.carouselpag">
-				<source>Show pagination</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.carouselautoplay">
-				<source>Set Autoplay</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_feed.flexform.carouseltime">
-				<source>Add transition time</source>
-			</trans-unit>
-
-			<!-- Phototile Flexform-->
-			<!-- Sheet 1 -->
-			<trans-unit id="tx_nsinstagram_phototile.errorMessage">
-				<source>Failed using HttpRequest</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.sheetTitle">
-				<source>Account Settings</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.configuration">
-				<source>Configuration</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.title">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.user">
-				<source>Add Own Username</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.source">
-				<source>Retrieve Photos From</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.source.0">
-				<source>User's Recent Images</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.source.1">
-				<source>User's Liked Images</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.source.2">
-				<source>Global Popular</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.source.3">
-				<source>Global Tag</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.tag">
-				<source>Tag (Without # and special character)</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.image_link">
-				<source>Links to Image</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.image_link.0">
-				<source>Do not link images</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.image_link.1">
-				<source>Link to Instagram Page</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.image_link.2">
-				<source>Link to URL Address</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.image_link.3">
-				<source>Use Lightbox</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.lightbox">
-				<source>Choose jQuery Lightbox Plugin</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.lightbox.0">
-				<source>Colorbox</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.lightbox.1">
-				<source>Fancybox</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.lightbox.2">
-				<source>Preetyphoto</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.link_url">
-				<source>Link URL</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.show_link">
-				<source>Show Instagram Follow Link</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.link_text">
-				<source>Add Link Text</source>
-			</trans-unit>
-			<!-- Sheet 2 -->
-			<trans-unit id="tx_nsinstagram_phototile.flexform.additional">
-				<source>Style Settings</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.style_option">
-				<source>Style</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.style_option.0">
-				<source>Cascade</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.style_option.1">
-				<source>Vertical</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.style_option.2">
-				<source>Windows</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.style_option.3">
-				<source>Wall</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.style_option.4">
-				<source>Gallery</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.img_per_row">
-				<source>Photos per row</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.noofimage">
-				<source>Number of photos</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.cols">
-				<source>Number of columns</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.ratio_width">
-				<source>Aspect Ratio Width</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.ratio_height">
-				<source>Aspect Ratio Height</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.photo_size">
-				<source>Photo Size</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.photo_size.0">
-				<source>Large</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.photo_size.1">
-				<source>Medium</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.photo_size.2">
-				<source>Thumb</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.style">
-				<source>Style for photos</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.shadow">
-				<source>Add slight image shadow</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.curve">
-				<source>Add slight curve to corners</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.highlight">
-				<source>Highlight when hovering</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.highlight_color">
-				<source>Highlight color for hovering</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.border">
-				<source>Add white image border</source>
-			</trans-unit>
-			<!-- Sheet 3 -->
-			<trans-unit id="tx_nsinstagram_phototile.flexform.format">
-				<source>Format Settings</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.align">
-				<source>Photo alignment</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.align.0">
-				<source>Left</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.align.1">
-				<source>Center</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.align.2">
-				<source>Right</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.max_width">
-				<source>Maximum Width of widget (Percentage (%) between 1 and 100.)</source>
-			</trans-unit>
-			<!-- Constant Editor -->
-			<trans-unit id="tx_nsinstagram_phototile.flexform.clientId">
-				<source>Client Id</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.clientSecret">
-				<source>Client Secret</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_phototile.flexform.accessToken">
-				<source>Access Token : Change your setting in upparcase letter for get access token : https://www.instagram.com/oauth/authorize?client_id=CLIENT_ID&amp;redirect_uri=REDIRECT_URI&amp;scope=basic+public_content&amp;response_type=token</source>
-			</trans-unit>
-			<trans-unit id="username">
-				<source>Instagram Username</source>
-			</trans-unit>
-			<trans-unit id="user_id">
-				<source>User Id</source>
-			</trans-unit>
-			<trans-unit id="picture">
-				<source>Profile Picture</source>
-			</trans-unit>
-
-			<trans-unit id="tx_ns_instagram_domain_model_imagegallery">
-				<source>Instagram Image Gallery</source>
-			</trans-unit>
-			<trans-unit id="tx_ns_instagram_domain_model_imagegallery.description">
-				<source>Display beautifully gallery with clean, customizable, and responsive feeds from multiple Instagram accounts.</source>
-			</trans-unit>
-			<trans-unit id="tx_ns_instagram_domain_model_widget">
-				<source>Instagram Widget</source>
-			</trans-unit>
-			<trans-unit id="tx_ns_instagram_domain_model_widget.description">
-				<source>Display beautifully gallery with clean, customizable, and responsive feeds from multiple Instagram accounts.</source>
-			</trans-unit>
-			<trans-unit id="tx_ns_instagram_domain_model_phototile">
-				<source>Instagram phototile</source>
-			</trans-unit>
-			<trans-unit id="tx_ns_instagram_domain_model_phototile.description">
-				<source>Display beautifully gallery with clean, customizable, and responsive feeds from multiple Instagram accounts.</source>
-			</trans-unit>
-			<trans-unit id="tx_nsinstagram_domain_model_gallery">
-				<source>Gallery</source>
+			<trans-unit id="flexform.settings.onclickpost">
+				<source>How to display a post on click?</source>
 			</trans-unit>
 		</body>
 	</file>

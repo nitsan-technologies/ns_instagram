@@ -1,0 +1,24 @@
+# customsubcategory=401=LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:apiconfig
+
+plugin.tx_nsinstagram_instagramfeeds {
+    view {
+        # cat=plugin.tx_nsinstagram/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:ns_instagram/Resources/Private/Templates/
+        # cat=plugin.tx_nsinstagram/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:ns_instagram/Resources/Private/Partials/
+        # cat=plugin.tx_nsinstagram/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:ns_instagram/Resources/Private/Layouts/
+    }
+    settings {
+      # cat=plugin.tx_nsinstagram//a; type=string; label= LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:settings.jquery
+      jquery = https://code.jquery.com/jquery-latest.min.js
+      # cat=plugin.tx_nsinstagram//a; type=string; label= LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:settings.customcss
+      customcss =  typo3conf/ext/ns_instagram/Resources/Public/Css/custom.css
+      # cat=plugin.tx_nsinstagram//a; type=string; label= LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:settings.fontawesome
+      fontawesome =  https://use.fontawesome.com/releases/v5.2.0/css/all.css
+      # cat=plugin.tx_nsinstagram/401; type=string; label= LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:apiconfig.v1api
+      v1api = 
+      # cat=plugin.tx_nsinstagram/401; type=string; label= LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:apiconfig.graphapi
+      graphapi = 
+    }
+}

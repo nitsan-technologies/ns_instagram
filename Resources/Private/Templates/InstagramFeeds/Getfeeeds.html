@@ -1,0 +1,44 @@
+{namespace resource=NITSAN\NsInstagram\ViewHelpers}
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+	<f:section name="content">
+		<f:flashMessages />
+		<f:switch expression="{settings.feedType}">
+			<f:case value="javascriptview">
+				<resource:LoadInstagramJs settings="{settings}" contentId="{contentId}" />
+				<div id="nsinstagram-feed-{contentId}" class="instagram_feed" style="display: flow-root;"></div>
+			</f:case>
+			<f:case value="v1apiview">
+				<div class="nsinstagram-v1apiview">
+					<f:if condition="{instamedia}">
+						<f:then>
+							<f:if condition="{settings.v1display_profile}">
+								<f:render partial="V1apiview/Userprofile" arguments="{instauser:instauser,settings:settings}" />
+							</f:if>
+							<div class="gallery">
+								<f:render partial="V1apiview/Instamedia" arguments="{instamedia:instamedia,settings:settings}" />
+							</div>
+						</f:then>
+						<f:else>
+							<f:translate key="instagram.noinstamedia" extensionName="ns_instagram" />
+						</f:else>
+					</f:if>
+				</div>
+			</f:case>
+			<f:case value="graphapiview">
+				<div class="nsinstagram-v1apiview">
+					<f:if condition="{instamedia}">
+						<f:then>
+							<div class="gallery">
+								<f:render partial="Graphapiview/Instamedia" arguments="{instamedia:instamedia,settings:settings}" />
+							</div>
+						</f:then>
+						<f:else>
+							<f:translate key="instagram.noinstamedia" extensionName="ns_instagram" />
+						</f:else>
+					</f:if>
+				</div>
+			</f:case>
+		</f:switch>
+	</f:section>
+</html>

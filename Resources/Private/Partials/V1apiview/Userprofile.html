@@ -1,0 +1,30 @@
+<div class="profile">
+    <f:if condition="{instauser.profile_picture}">
+        <div class="profile-image">
+            <img src="{instauser.profile_picture}" alt="{instauser.full_name}">
+        </div>
+    </f:if>
+    <div class="profile-user-settings">
+        <h3 class="profile-user-name">{instauser.username}</h3>
+        <f:if condition="{settings.v1display_followbtn}">
+            <f:link.external uri="https://www.instagram.com/{instauser.username}" class="btn-follow is-not-following" target="_blank"><f:translate key="instagram.follow" extensionName="ns_instagram" /></f:link.external>
+        </f:if>
+    </div>
+    <div class="profile-stats">
+        <ul>
+            <li><span class="profile-stat-count">{instauser.counts.media}</span> <f:translate key="instagram.posts" extensionName="ns_instagram"/></li>
+            <li><span class="profile-stat-count">{instauser.counts.followed_by}</span> <f:translate key="instagram.{f:if(condition: '{instauser.counts.followed_by}>1', then: 'followers', else: 'follower')}" extensionName="ns_instagram" /></li>
+            <li><span class="profile-stat-count">{instauser.counts.follows}</span> <f:translate key="instagram.following" extensionName="ns_instagram" /></li>
+        </ul>
+    </div>
+    <div class="profile-bio">
+        <p><span class="profile-real-name">{instauser.full_name}</span> 
+            <f:if condition="{settings.v1display_biography}">
+                <br />{instauser.bio}
+            </f:if>
+            <f:if condition="{settings.v1display_website}">
+                <br/><f:link.external uri="{instauser.website}" target="_blank">{instauser.website}</f:link.external>
+            </f:if>
+        </p>
+    </div>
+</div>

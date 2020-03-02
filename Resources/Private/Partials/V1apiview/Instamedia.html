@@ -1,0 +1,100 @@
+<f:for each="{instamedia}" as="instadata" iteration="i">
+    <f:if condition="{settings.onclickpost}=='instagramlink'">
+        <f:then>
+            <a href="{instadata.link}" title="{instadata.caption.text}" target="_blank">
+                <f:render section="insta-gallery-item" arguments="{_all}" />
+            </a>
+        </f:then>
+        <f:else>
+            <f:switch expression="{instadata.type}">
+                <f:case value="carousel">
+                    <f:for each="{instadata.carousel_media}" as="carousel" iteration="i">
+                        <f:if condition="{i.isFirst}">
+                            <f:then>
+                                <f:if condition="{carousel.type}=='video'">
+                                    <f:then>
+                                        <a href='{carousel.videos.standard_resolution.url}' data-fancybox="fancybox-{instadata.id}" data-caption="{instadata.caption.text}" >
+                                            <f:render section="insta-gallery-item" arguments="{_all}" />
+                                        </a>
+                                    </f:then>
+                                    <f:else>
+                                        <a href='{carousel.images.standard_resolution.url}' data-fancybox="fancybox-{instadata.id}" data-caption="{instadata.caption.text}">
+                                            <f:render section="insta-gallery-item" arguments="{_all}" />
+                                        </a>
+                                    </f:else>
+                                </f:if>
+                            </f:then>
+                            <f:else>
+                                <f:if condition="{carousel.type}=='video'">
+                                    <f:then>
+                                        <a href='{carousel.videos.standard_resolution.url}' data-fancybox="fancybox-{instadata.id}" data-caption="{instadata.caption.text}" style="display: none;">{instadata.link}</a>
+                                    </f:then>
+                                    <f:else>
+                                        <a href='{carousel.images.standard_resolution.url}' data-fancybox="fancybox-{instadata.id}" data-caption="{instadata.caption.text}" style="display: none;">{instadata.link}</a>
+                                    </f:else>
+                                </f:if>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </f:case>
+                <f:case value="video">
+                    <a href='{instadata.videos.standard_resolution.url}' data-fancybox="fancybox-{instadata.id}" data-caption="{instadata.caption.text}">
+                        <f:render section="insta-gallery-item" arguments="{_all}" />
+                    </a>
+                </f:case>
+                <f:defaultCase>
+                    <a href='{instadata.images.standard_resolution.url}' data-fancybox="fancybox-{instadata.id}" data-caption="{instadata.caption.text}">
+                        <f:render section="insta-gallery-item" arguments="{_all}" />
+                    </a>
+                </f:defaultCase>
+            </f:switch>
+        </f:else>
+    </f:if>
+</f:for>
+
+<f:section name="insta-gallery-item">
+    <div class="gallery-item">
+        <img src="{instadata.images.standard_resolution.url}" class="gallery-image" alt="{instadata.caption.text}" />
+        <f:render section="instafeedtype" arguments="{_all}" />
+        <f:render section="instafeed" arguments="{_all}" />
+    </div>
+</f:section>
+
+<f:section name="instafeed">
+    <div class="gallery-item-info">
+        <ul>
+            <li class="gallery-item-likes">
+                <span class="visually-hidden">
+                    <f:translate key="instagram.likes" extensionName="ns_instagram" /></span>
+                <i class="fas fa-heart" aria-hidden="true"></i> {instadata.likes.count}
+            </li>
+            <li class="gallery-item-comments">
+                <span class="visually-hidden">
+                    <f:translate key="instagram.comments" extensionName="ns_instagram" /></span>
+                <i class="fas fa-comment" aria-hidden="true"></i> {instadata.comments.count}
+            </li>
+        </ul>
+    </div>
+</f:section>
+
+<f:section name="instafeedtype">
+    <f:switch expression="{instadata.type}">
+        <f:case value="carousel">
+            <div class="gallery-item-type">
+                <span class="visually-hidden">
+                    <f:translate key="instagram.gallery" extensionName="ns_instagram" />
+                </span>
+                <i class="fas fa-clone" aria-hidden="true"></i>
+            </div>
+        </f:case>
+        <f:case value="video">
+            <div class="gallery-item-type">
+                <span class="visually-hidden">
+                    <f:translate key="instagram.video" extensionName="ns_instagram" />
+                </span>
+                <i class="fas fa-video" aria-hidden="true"></i>
+            </div>
+        </f:case>
+    </f:switch>
+</f:section>
+

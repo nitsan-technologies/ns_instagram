@@ -1,53 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2017-03-25T15:33:05Z" product-name="ns_instagram">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-02-21T15:05:37Z" product-name="ns_instagram">
 		<header/>
 		<body>
-			<trans-unit id="tx_ns_instagram_domain_model_feed">
-				<source>Instagram Feed</source>
+			<trans-unit id="instagram.noapi">
+				<source>Please enter valid Instagram access token at the extension constant.</source>
 			</trans-unit>
-			<trans-unit id="tx_ns_instagram_domain_model_feed.description">
-				<source>Display beautifully gallery with clean, customizable, and responsive feeds from multiple Instagram accounts.</source>
+			<trans-unit id="instagram.apierror">
+				<source>Instagram Access Token is invalid. Please enter a valid Access Token.</source>
 			</trans-unit>
-			<trans-unit id="tx_ns_instagram_domain_model_imagegallery">
-				<source>Instagram Image Gallery</source>
+			<trans-unit id="instagram.posts">
+				<source>posts</source>
 			</trans-unit>
-			<trans-unit id="tx_ns_instagram_domain_model_imagegallery.description">
-				<source>Display beautifully gallery with clean, customizable, and responsive feeds from multiple Instagram accounts.</source>
+			<trans-unit id="instagram.followers">
+				<source>followers</source>
 			</trans-unit>
-			<trans-unit id="tx_ns_instagram_domain_model_widget">
-				<source>Instagram Widget</source>
+			<trans-unit id="instagram.follower">
+				<source>follower</source>
 			</trans-unit>
-			<trans-unit id="tx_ns_instagram_domain_model_widget.description">
-				<source>Display beautifully gallery with clean, customizable, and responsive feeds from multiple Instagram accounts.</source>
+			<trans-unit id="instagram.following">
+				<source>following</source>
 			</trans-unit>
-			<trans-unit id="tx_ns_instagram_domain_model_widget.errorMessage">
-				<source>Instagram post not found with this username</source>
+			<trans-unit id="instagram.follow">
+				<source>Follow</source>
 			</trans-unit>
-			<trans-unit id="tx_ns_instagram_domain_model_phototile">
-				<source>Instagram phototile</source>
+			<trans-unit id="instagram.likes">
+				<source>Likes:</source>
 			</trans-unit>
-			<trans-unit id="tx_ns_instagram_domain_model_phototile.description">
-				<source>Display beautifully gallery with clean, customizable, and responsive feeds from multiple Instagram accounts.</source>
+			<trans-unit id="instagram.comments">
+				<source>Comments:</source>
 			</trans-unit>
-			<trans-unit id="tx_nsinstagram_domain_model_gallery">
+			<trans-unit id="instagram.gallery">
 				<source>Gallery</source>
 			</trans-unit>
-
-			<trans-unit id="widget.empty">
-				<source>Instagram did not return images for this username , please add registerd username</source>
+			<trans-unit id="instagram.video">
+				<source>Video</source>
 			</trans-unit>
-			<trans-unit id="phototile.errorMessage">
-				<source>Failed using HttpRequest.Check your request using %s. If the feed is empty, then the problem is with Instagram. If you see a full page of text, then the problem is with the this plugin or your web server</source>
-			</trans-unit>
-			<trans-unit id="phototile.error">
-				<source>ERROR </source>
-			</trans-unit>
-			<trans-unit id="phototile.configurationErrorMessage">
-				<source>Please enter Client Configuration from template</source>
-			</trans-unit>
-			<trans-unit id="feed.errorMessage">
-				<source>Please enter a User ID on the Instagram Feed plugin Settings page</source>
+			<trans-unit id="instagram.noinstamedia">
+				<source>API doesn't get any media from Instagram. Make sure you have posted media on Instagram.</source>
 			</trans-unit>
 		</body>
 	</file>
