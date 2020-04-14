@@ -31,7 +31,6 @@ class LoadInstagramJsViewHelper extends AbstractViewHelper
 
         if ($arguments['settings']['viewusing']=='username') {
             $type =  "'username': '" . $arguments['settings']['username'] . "'";
-            $arguments['settings']['items'] = 12;
         } else {
             $type = "'tag': '" . $arguments['settings']['hashtag'] . "'";
         }
@@ -44,7 +43,7 @@ class LoadInstagramJsViewHelper extends AbstractViewHelper
                                           'display_igtv': false";
         }
 
-        $codeBlock = ' 
+        $codeBlock = '
                     (function() {
                         new InstagramFeed({
                             ' . $type . ",

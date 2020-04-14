@@ -141,12 +141,7 @@
 					<settings.items>
 						<TCEforms>
 							<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.items</label>
-							<displayCond>
-								<and>
-									<value1>FIELD:settings.feedType:=:javascriptview</value1>
-									<value2>FIELD:settings.viewusing:=:hashtag</value2>
-								</and>
-							</displayCond>
+							<displayCond>FIELD:settings.feedType:=:javascriptview</displayCond>
 							<config>
 								<type>input</type>
 								<size>30</size>
