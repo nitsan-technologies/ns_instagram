@@ -2,7 +2,8 @@
 namespace NITSAN\NsInstagram\Controller;
 
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Http\RequestFactory;
 /***
  *
  * This file is part of the "[NITSAN] Instagram Plugin" Extension for TYPO3 CMS.
@@ -102,7 +103,21 @@ class InstagramFeedsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
                     break;
             }
         }
-        $data = @file_get_contents($url);
-        return json_decode($data, true);
+        try {
+            $apiRequest = GeneralUtility::makeInstance(RequestFactory::class);
+            $apiResponse = $apiRequest->request(
+                $url,
+                'GET',
+                [
+                    'User-Agent' => 'TYPO3 Extension ns_instagram'
+                ]
+            );
+            $apiResults = $apiResponse->getBody()->getContents();
+            if (($apiResponse->getStatusCode() === 200) || empty($apiResults)) {
+                return json_decode($apiResults, true);
+            }
+        } catch (\Exception $e) {
+            return json_decode($e->getMessage(), true);
+        }
     }
 }
