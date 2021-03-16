@@ -20,7 +20,7 @@ call_user_func(
 if (version_compare(TYPO3_branch, '7.0', '>')) {
     if (TYPO3_MODE === 'BE') {
         $icons = [
-            'ext-ns-instagram-icon' => 'plug_instagram.svg',
+            'ext-ns-instagram-icon' => 'ns_instagram.svg',
         ];
         $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
         foreach ($icons as $identifier => $path) {
