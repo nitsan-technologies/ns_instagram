@@ -44,8 +44,9 @@ class LoadInstagramJsViewHelper extends AbstractViewHelper
         }
 
         $codeBlock = '
-                    (function() {
-                        new InstagramFeed({
+                (function($){
+                    $(window).on("load", function(){
+                        $.instagramFeed({
                             ' . $type . ",
                             'container': document.getElementById('nsinstagram-feed-" . $arguments['contentId'] . "'),
                             'display_profile': " . $arguments['settings']['display_profile'] . ",
@@ -57,7 +58,8 @@ class LoadInstagramJsViewHelper extends AbstractViewHelper
                             'items_per_row': " . $arguments['settings']['items_per_row'] . ",
                             'margin': " . $arguments['settings']['margin'] . '
                         });
-                    })();
+                    });
+                })(jQuery);
                     ';
         $pageRender->addJsFooterInlineCode('instagram-config' . $arguments['contentId'], $codeBlock, true);
     }

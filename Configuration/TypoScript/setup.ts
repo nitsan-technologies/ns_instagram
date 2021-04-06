@@ -27,7 +27,7 @@ page {
         nsinstagramjQuery.if.isTrue = {$plugin.tx_nsinstagram_instagramfeeds.settings.jquery}
     }
     includeJSFooter{
-        nsinstagramlibrary = typo3conf/ext/ns_instagram/Resources/Public/Js/InstagramFeed.min.js
+        nsinstagramlibrary = typo3conf/ext/ns_instagram/Resources/Public/Js/jquery.instagramFeed.min.js
         nsinstagramFancyboxJs = typo3conf/ext/ns_instagram/Resources/Public/Js/jquery.fancybox.min.js
     }
 }
