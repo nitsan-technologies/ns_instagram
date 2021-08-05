@@ -18,7 +18,7 @@ page {
     includeCSS {
 		nsinstagramFontAwesomeCss = {$plugin.tx_nsinstagram_instagramfeeds.settings.fontawesome}
 		nsinstagramFontAwesomeCss.if.isTrue = {$plugin.tx_nsinstagram_instagramfeeds.settings.fontawesome}
-        nsinstagramFancyboxCss = typo3conf/ext/ns_instagram/Resources/Public/Css/jquery.fancybox.min.css
+        nsinstagramFancyboxCss = EXT:ns_instagram/Resources/Public/Css/jquery.fancybox.min.css
 		nsinstagramCustomcss = {$plugin.tx_nsinstagram_instagramfeeds.settings.customcss}
 		nsinstagramCustomcss.if.isTrue = {$plugin.tx_nsinstagram_instagramfeeds.settings.customcss}
 	}
@@ -27,7 +27,7 @@ page {
         nsinstagramjQuery.if.isTrue = {$plugin.tx_nsinstagram_instagramfeeds.settings.jquery}
     }
     includeJSFooter{
-        nsinstagramlibrary = typo3conf/ext/ns_instagram/Resources/Public/Js/jquery.instagramFeed.min.js
-        nsinstagramFancyboxJs = typo3conf/ext/ns_instagram/Resources/Public/Js/jquery.fancybox.min.js
+        nsinstagramlibrary = EXT:ns_instagram/Resources/Public/Js/jquery.instagramFeed.min.js
+        nsinstagramFancyboxJs = EXT:ns_instagram/Resources/Public/Js/jquery.fancybox.min.js
     }
 }
