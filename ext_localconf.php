@@ -1,21 +1,25 @@
 <?php
 defined('TYPO3_MODE') || die('Access denied.');
 
-call_user_func(
-    function () {
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'NITSAN.NsInstagram',
-            'Instagramfeeds',
-            [
-                'InstagramFeeds' => 'getfeeeds'
-            ],
-            // non-cacheable actions
-            [
-                'InstagramFeeds' => ''
-            ]
-        );
-    }
+if (version_compare(TYPO3_branch, '11.0', '>=')) {
+    $moduleClass = \NITSAN\NsInstagram\Controller\InstagramFeedsController::class;
+} else {
+    $moduleClass = 'InstagramFeeds';
+}
+
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'NITSAN.NsInstagram',
+    'Instagramfeeds',
+    [
+        $moduleClass => 'getfeeeds',
+    ],
+    // non-cacheable actions
+    [
+        $moduleClass => ''
+    ]
 );
+   
 
 if (version_compare(TYPO3_branch, '7.0', '>')) {
     if (TYPO3_MODE === 'BE') {
