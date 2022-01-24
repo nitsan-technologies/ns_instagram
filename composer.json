@@ -24,7 +24,7 @@
         }
     },
     "replace": {
-        "nitsan/ns-instagram": "self.version"
+        "typo3-ter/ns-instagram": "self.version"
     },
     "config": {
         "vendor-dir": ".Build/vendor/",
