@@ -9,12 +9,12 @@ plugin.tx_nsinstagram_instagramfeeds {
         layoutRootPaths.1 = {$plugin.tx_nsinstagram_instagramfeeds.view.layoutRootPath}
     }
     settings {
-        v1api = {$plugin.tx_nsinstagram_instagramfeeds.settings.v1api}
         graphapi = {$plugin.tx_nsinstagram_instagramfeeds.settings.graphapi}
     }
 }
-
+page = PAGE
 page {
+    
     includeCSS {
 		nsinstagramFontAwesomeCss = {$plugin.tx_nsinstagram_instagramfeeds.settings.fontawesome}
 		nsinstagramFontAwesomeCss.if.isTrue = {$plugin.tx_nsinstagram_instagramfeeds.settings.fontawesome}
@@ -22,12 +22,13 @@ page {
 		nsinstagramCustomcss = {$plugin.tx_nsinstagram_instagramfeeds.settings.customcss}
 		nsinstagramCustomcss.if.isTrue = {$plugin.tx_nsinstagram_instagramfeeds.settings.customcss}
 	}
-    includeJS{
+
+    includeJS {
         nsinstagramjQuery = {$plugin.tx_nsinstagram_instagramfeeds.settings.jquery}
         nsinstagramjQuery.if.isTrue = {$plugin.tx_nsinstagram_instagramfeeds.settings.jquery}
     }
-    includeJSFooter{
-        nsinstagramlibrary = EXT:ns_instagram/Resources/Public/Js/jquery.instagramFeed.min.js
+
+    includeJSFooter {
         nsinstagramFancyboxJs = EXT:ns_instagram/Resources/Public/Js/jquery.fancybox.min.js
     }
 }

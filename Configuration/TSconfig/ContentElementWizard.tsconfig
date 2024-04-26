@@ -13,3 +13,5 @@ mod.wizards.newContentElement.wizardItems.plugins {
 	}
 }
 
+
+mod.web_layout.tt_content.preview.list.nsinstagram_instagramfeeds = EXT:ns_instagram/Resources/Private/Backend/Nsinstagram.html

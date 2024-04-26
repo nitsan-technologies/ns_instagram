@@ -9,27 +9,6 @@
 			<trans-unit id="instagram.apierror">
 				<source>Instagram Access Token is invalid. Please enter a valid Access Token.</source>
 			</trans-unit>
-			<trans-unit id="instagram.posts">
-				<source>posts</source>
-			</trans-unit>
-			<trans-unit id="instagram.followers">
-				<source>followers</source>
-			</trans-unit>
-			<trans-unit id="instagram.follower">
-				<source>follower</source>
-			</trans-unit>
-			<trans-unit id="instagram.following">
-				<source>following</source>
-			</trans-unit>
-			<trans-unit id="instagram.follow">
-				<source>Follow</source>
-			</trans-unit>
-			<trans-unit id="instagram.likes">
-				<source>Likes:</source>
-			</trans-unit>
-			<trans-unit id="instagram.comments">
-				<source>Comments:</source>
-			</trans-unit>
 			<trans-unit id="instagram.gallery">
 				<source>Gallery</source>
 			</trans-unit>

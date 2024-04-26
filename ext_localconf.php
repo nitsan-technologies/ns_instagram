@@ -1,15 +1,22 @@
 <?php
-defined('TYPO3_MODE') || die('Access denied.');
 
-if (version_compare(TYPO3_branch, '11.0', '>=')) {
+defined('TYPO3') || defined('TYPO3_MODE') || die('Access denied.');
+
+$typo3VersionArray = \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionStringToArray(
+    \TYPO3\CMS\Core\Utility\VersionNumberUtility::getCurrentTypo3Version()
+);
+
+if (version_compare($typo3VersionArray['version_main'], '11', '>=')) {
     $moduleClass = \NITSAN\NsInstagram\Controller\InstagramFeedsController::class;
+    $moduleName = 'NsInstagram';
 } else {
     $moduleClass = 'InstagramFeeds';
+    $moduleName = 'NITSAN.NsInstagram';
 }
 
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'NITSAN.NsInstagram',
+    $moduleName,
     'Instagramfeeds',
     [
         $moduleClass => 'getfeeeds',
@@ -20,21 +27,14 @@ if (version_compare(TYPO3_branch, '11.0', '>=')) {
     ]
 );
    
-
-if (version_compare(TYPO3_branch, '7.0', '>')) {
-    if (TYPO3_MODE === 'BE') {
-        $icons = [
-            'ext-ns-instagram-icon' => 'ns_instagram.svg',
-        ];
-        $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-        foreach ($icons as $identifier => $path) {
-            $iconRegistry->registerIcon(
-                $identifier,
-                \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-                ['source' => 'EXT:ns_instagram/Resources/Public/Icons/' . $path]
-            );
-        }
-    }
+$icons = [
+    'ext-ns-instagram-icon' => 'ns_instagram.svg',
+];
+$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+foreach ($icons as $identifier => $path) {
+    $iconRegistry->registerIcon(
+        $identifier,
+        \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        ['source' => 'EXT:ns_instagram/Resources/Public/Icons/' . $path]
+    );
 }
-
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['nsinstagram_instagramfeeds'] = 'NITSAN\\NsInstagram\\Hooks\\PageLayoutView';

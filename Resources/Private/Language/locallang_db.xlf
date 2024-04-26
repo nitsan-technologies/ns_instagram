@@ -3,9 +3,6 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2020-02-21T15:05:37Z" product-name="ns_instagram">
 		<header/>
 		<body>
-			<trans-unit id="tx_nsinstagram_domain_model_instagramfeeds">
-				<source>Instagram Feed</source>
-			</trans-unit>
 			<trans-unit id="tx_ns_instagram_instagramfeeds.name">
 				<source>Instagram Feed</source>
 			</trans-unit>
@@ -14,9 +11,6 @@
 			</trans-unit>
 			<trans-unit id="apiconfig" xml:space="preserve">
 				<source>API Configuration</source>
-			</trans-unit>
-			<trans-unit id="apiconfig.v1api" xml:space="preserve">
-				<source>Add Instagram V1 API Access Token (api.instagram.com/v1/): Will required if you set Instagram V1 API in plugin option (To get token: https://quadlayers.com/insta-token/)</source>
 			</trans-unit>
 			<trans-unit id="apiconfig.graphapi" xml:space="preserve">
 				<source>Add Instagram Basic Display API Access Token (graph.instagram.com): Will required if you set Instagram Basic Display API in plugin option (To get token: https://developers.facebook.com/docs/instagram-basic-display-api/getting-started)</source>
@@ -27,9 +21,6 @@
 			<trans-unit id="settings.fontawesome" xml:space="preserve">
 				<source>Include Fontawesome</source>
 			</trans-unit>
-			<trans-unit id="settings.fancybox" xml:space="preserve">
-				<source>Include Fancybox</source>
-			</trans-unit>
 			<trans-unit id="settings.customcss" xml:space="preserve">
 				<source>Include Custom CSS</source>
 			</trans-unit>
@@ -37,61 +28,13 @@
 				<source>Feed Settings</source>
 			</trans-unit>
 			<trans-unit id="flexform.settings.feedType">
-				<source>Select Type</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.feedType.javascriptview">
-				<source>Show Feed using Javascript without API</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.feedType.v1apiview">
-				<source>Show Feed using Instagram V1 API</source>
+				<source>Type</source>
 			</trans-unit>
 			<trans-unit id="flexform.settings.feedType.graphapiview">
 				<source>Show Feed using Instagram Basic Display API</source>
 			</trans-unit>
-			<trans-unit id="flexform.settings.viewusing">
-				<source>Show Gallary From</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.viewusing.username">
-				<source>Username</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.viewusing.hashtag">
-				<source>Hashtag</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.feedlisttype">
-				<source>Show Listing Of</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.feedlisttype.photos">
-				<source>Photos</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.feedlisttype.igtv">
-				<source>IGTV videos</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.username">
-				<source>Username (Make sure entered username exists at instagram and should be insta username)</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.hashtag">
-				<source>Hashtag</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.display_profile">
-				<source>Display Profile</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.display_biography">
-				<source>Display Biography</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.display_followbtn">
-				<source>Display Follow Button</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.display_website">
-				<source>Display Website</source>
-			</trans-unit>
 			<trans-unit id="flexform.settings.items">
 				<source>Items</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.items_per_row">
-				<source>Items Per Row</source>
-			</trans-unit>
-			<trans-unit id="flexform.settings.margin">
-				<source>Margin</source>
 			</trans-unit>
 			<trans-unit id="flexform.settings.onclickpost.instagramlink">
 				<source>Open at Instagram</source>
