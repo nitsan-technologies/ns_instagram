@@ -1,4 +1,4 @@
-# ns_instagram
+# Instagram
 
 - Live Frontend Demo: https://demo.t3planet.com/t3-extensions/instagram
 - Free version: https://extensions.typo3.org/extension/ns_instagram/
