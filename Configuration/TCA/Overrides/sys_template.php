@@ -1,7 +1,10 @@
 <?php
-defined('TYPO3_MODE') || die('Access denied.');
 
-$extKey = 'ns_instagram';
+defined('TYPO3') || defined('TYPO3_MODE') || die('Access denied.');
 
 // Adding fields to the tt_content table definition in TCA
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($extKey, 'Configuration/TypoScript', '[NITSAN] Instagram');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+    'ns_instagram',
+    'Configuration/TypoScript',
+    'Instagram'
+);
