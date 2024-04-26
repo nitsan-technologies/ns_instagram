@@ -26,7 +26,7 @@ if (version_compare($typo3VersionArray['version_main'], '11', '>=')) {
         $moduleClass => ''
     ]
 );
-   
+
 $icons = [
     'ext-ns-instagram-icon' => 'ns_instagram.svg',
 ];
@@ -38,3 +38,6 @@ foreach ($icons as $identifier => $path) {
         ['source' => 'EXT:ns_instagram/Resources/Public/Icons/' . $path]
     );
 }
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+    '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:ns_instagram/Configuration/TSconfig/ContentElementWizard.tsconfig">'
+);
