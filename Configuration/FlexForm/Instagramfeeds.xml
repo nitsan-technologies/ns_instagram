@@ -2,44 +2,38 @@
 	<sheets>
 		<sDEF>
 			<ROOT>
-				<TCEforms>
-					<sheetTitle>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.setting</sheetTitle>
-				</TCEforms>
+				<sheetTitle>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.setting</sheetTitle>
 				<type>array</type>
 				<el>
 					<settings.graphitems>
-						<TCEforms>
-							<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.items</label>
-							<config>
-								<type>input</type>
-								<size>30</size>
-								<eval>trim,required,int</eval>
-								<default>6</default>
-								<range>
-									<lower>1</lower>
-								</range>
-							</config>
-						</TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.items</label>
+						<config>
+							<type>input</type>
+							<size>30</size>
+							<eval>trim,required,int</eval>
+							<default>6</default>
+							<range>
+								<lower>1</lower>
+							</range>
+						</config>
 					</settings.graphitems>
 					<settings.graphonclickpost>
-						<TCEforms>
-							<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.onclickpost</label>
-							<config>
-								<type>select</type>
-								<renderType>selectSingle</renderType>
-								<items type="array">
-									<numIndex index="0" type="array">
-										<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.onclickpost.instagramlink</numIndex>
-										<numIndex index="1">instagramlink</numIndex>
-									</numIndex>
-									<numIndex index="1" type="array">
-										<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.onclickpost.popup</numIndex>
-										<numIndex index="1">popup</numIndex>
-									</numIndex>
-								</items>
-								<default>popup</default>
-							</config>
-						</TCEforms>
+						<label>LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.onclickpost</label>
+						<config>
+							<type>select</type>
+							<renderType>selectSingle</renderType>
+							<items type="array">
+								<numIndex index="0" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.onclickpost.instagramlink</numIndex>
+									<numIndex index="1">instagramlink</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:flexform.settings.onclickpost.popup</numIndex>
+									<numIndex index="1">popup</numIndex>
+								</numIndex>
+							</items>
+							<default>popup</default>
+						</config>
 					</settings.graphonclickpost>
 				</el>
 			</ROOT>

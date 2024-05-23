@@ -1,7 +1,7 @@
 mod.wizards.newContentElement.wizardItems.plugins {
 	elements{
-		instagramfeeds{
-			icon = ../typo3conf/ext/ns_instagram/Resources/Public/Icons/plug_instagram.svg
+		nsinstagram_instagramfeeds{
+			icon = .EXT:ns_instagram/Resources/Public/Icons/plug_instagram.svg
 			iconIdentifier = ext-ns-instagram-icon
 			title = LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_ns_instagram_instagramfeeds.name
 			description = LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_ns_instagram_instagramfeeds.description

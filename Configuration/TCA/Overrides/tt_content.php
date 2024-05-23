@@ -18,7 +18,9 @@ if (version_compare($typo3VersionArray['version_main'], '11', '>=')) {
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
     $extName,
     'Instagramfeeds',
-    'Instagram Feeds'
+    'LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_ns_instagram_instagramfeeds.name',
+    'ext-ns-instagram-icon',
+    'plugins'
 );
 
 /* Flexform setting  */

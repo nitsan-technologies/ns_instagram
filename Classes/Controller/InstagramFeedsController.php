@@ -5,21 +5,12 @@ use TYPO3\CMS\Core\Http\RequestFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-/***
- *
- * This file is part of the "[NITSAN] Instagram Plugin" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2020 T3:Bhavin Barad, QA:Vandna Kalivada <sanjay@nitsan.in>, NITSAN Technologies Pvt Ltd
- *
- ***/
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * InstagramFeedsController
  */
-class InstagramFeedsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class InstagramFeedsController extends ActionController
 {
     /**
      * action getfeeeds
@@ -31,15 +22,22 @@ class InstagramFeedsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
         $typo3VersionArray = VersionNumberUtility::convertVersionStringToArray(
             VersionNumberUtility::getCurrentTypo3Version()
         );
+
+
+        if($typo3VersionArray['version_main'] >= 12) {
+            // @extensionScannerIgnoreLine
+            $severityClass = \TYPO3\CMS\Core\Type\ContextualFeedbackSeverity::ERROR;
+        } else {
+            // @extensionScannerIgnoreLine
+            $severityClass = \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR;
+        }
         
-        // @extensionScannerIgnoreLine
-        $contentId = $this->configurationManager->getContentObject()->data['uid'];
         $settings = $this->settings;
 
         if (empty($settings['graphapi'])) {
             $error = LocalizationUtility::translate('instagram.noapi', 'ns_instagram');
             // @extensionScannerIgnoreLine
-            $this->addFlashMessage($error, '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+            $this->addFlashMessage($error, '', $severityClass);
         } else {
             $instauser = $this->getAPIdataAction($settings['graphapi'], 'user');
             if ($instauser['username']) {
@@ -52,14 +50,11 @@ class InstagramFeedsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
             } else {
                 $error = LocalizationUtility::translate('instagram.apierror', 'ns_instagram');
                 // @extensionScannerIgnoreLine
-                $this->addFlashMessage($error, '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+                $this->addFlashMessage($error, '', $severityClass);
             }
         }
-        $this->view->assignMultiple([
-            'contentId' => $contentId
-        ]);
 
-        if (version_compare($typo3VersionArray['version_main'], '11', '>=')) {
+        if ($typo3VersionArray['version_main'] >= 11) {
             return $this->htmlResponse();
         }
     }
