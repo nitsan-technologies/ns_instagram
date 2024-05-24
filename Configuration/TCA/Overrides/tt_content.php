@@ -28,6 +28,6 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['nsinstag
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['nsinstagram_instagramfeeds'] = 'pi_flexform';
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
-    'nsinstagram_instagramfeeds', 
+    'nsinstagram_instagramfeeds',
     'FILE:EXT:ns_instagram/Configuration/FlexForm/Instagramfeeds.xml'
 );

@@ -1,11 +1,12 @@
 <?php
+
 namespace NITSAN\NsInstagram\Controller;
 
 use TYPO3\CMS\Core\Http\RequestFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\VersionNumberUtility;
-use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
  * InstagramFeedsController
@@ -14,8 +15,6 @@ class InstagramFeedsController extends ActionController
 {
     /**
      * action getfeeeds
-     *
-     * @return void
      */
     public function getfeeedsAction()
     {
@@ -23,15 +22,14 @@ class InstagramFeedsController extends ActionController
             VersionNumberUtility::getCurrentTypo3Version()
         );
 
-
-        if($typo3VersionArray['version_main'] >= 12) {
+        if ($typo3VersionArray['version_main'] >= 12) {
             // @extensionScannerIgnoreLine
             $severityClass = \TYPO3\CMS\Core\Type\ContextualFeedbackSeverity::ERROR;
         } else {
             // @extensionScannerIgnoreLine
             $severityClass = \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR;
         }
-        
+
         $settings = $this->settings;
 
         if (empty($settings['graphapi'])) {
@@ -61,11 +59,10 @@ class InstagramFeedsController extends ActionController
 
     /**
      * action getAPIdata
-     *
-     * @return void
      */
     public function getAPIdataAction($accessToken, $additionalconfig=null, $items=null)
     {
+        $url = '';
         switch ($additionalconfig) {
             case 'user':
                 $url = 'https://graph.instagram.com/me?fields=id,username,media_count&access_token=' . $accessToken;
@@ -79,19 +76,21 @@ class InstagramFeedsController extends ActionController
                 $url = 'https://graph.instagram.com/me/media?fields=media_url,thumbnail_url,caption,id,media_type,timestamp,username,permalink,children{media_url,id,media_type,timestamp,permalink,thumbnail_url}&access_token=' . $accessToken . '&limit=' . $items;
                 break;
         }
-        
+
         try {
-            $apiRequest = GeneralUtility::makeInstance(RequestFactory::class);
-            $apiResponse = $apiRequest->request(
-                $url,
-                'GET',
-                [
-                    'User-Agent' => 'TYPO3 Extension ns_instagram'
-                ]
-            );
-            $apiResults = $apiResponse->getBody()->getContents();
-            if (($apiResponse->getStatusCode() === 200) || empty($apiResults)) {
-                return json_decode($apiResults, true);
+            if ($url != '') {
+                $apiRequest = GeneralUtility::makeInstance(RequestFactory::class);
+                $apiResponse = $apiRequest->request(
+                    $url,
+                    'GET',
+                    [
+                        'User-Agent' => 'TYPO3 Extension ns_instagram',
+                    ]
+                );
+                $apiResults = $apiResponse->getBody()->getContents();
+                if (($apiResponse->getStatusCode() === 200) || empty($apiResults)) {
+                    return json_decode($apiResults, true);
+                }
             }
         } catch (\Exception $e) {
             return json_decode($e->getMessage(), true);
