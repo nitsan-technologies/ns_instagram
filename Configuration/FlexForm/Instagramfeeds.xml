@@ -11,10 +11,14 @@
 							<type>input</type>
 							<size>30</size>
 							<eval>trim,required,int</eval>
-							<default>6</default>
 							<range>
 								<lower>1</lower>
+								<upper>100</upper>
 							</range>
+							<slider>
+								<step>1</step>
+							</slider>
+							<default>6</default>
 						</config>
 					</settings.graphitems>
 					<settings.graphonclickpost>
