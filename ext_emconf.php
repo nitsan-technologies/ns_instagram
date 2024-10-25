@@ -14,7 +14,7 @@ $EM_CONF['ns_instagram'] = [
     'version' => '4.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '8.7.0-13.1.99',
+            'typo3' => '8.7.0-13.9.99',
         ],
         'conflicts' => [],
         'suggests' => [],
