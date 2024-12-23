@@ -13,7 +13,7 @@
 				<source>API Configuration</source>
 			</trans-unit>
 			<trans-unit id="apiconfig.graphapi" xml:space="preserve">
-				<source>Add Instagram Basic Display API Access Token (graph.instagram.com): Will required if you set Instagram Basic Display API in plugin option (To get token: https://developers.facebook.com/docs/instagram-basic-display-api/getting-started)</source>
+				<source>Add Instagram Access Token (graph.instagram.com): Required if you set Instagram Access Token in plugin option (To get token: https://developers.facebook.com/docs/instagram-basic-display-api/getting-started)</source>
 			</trans-unit>
 			<trans-unit id="settings.jquery" xml:space="preserve">
 				<source>Include jQuery Library</source>
