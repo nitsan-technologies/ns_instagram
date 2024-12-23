@@ -3,15 +3,17 @@
 	<f:section name="content">
 		<f:flashMessages />
 		<div class="nsinstagram-v1apiview">
-			<f:if condition="{instamedia}">
-				<f:then>
-					<div class="gallery">
-						<f:render partial="Graphapiview/Instamedia" arguments="{instamedia:instamedia,settings:settings}" />
-					</div>
-				</f:then>
-				<f:else>
-					<f:translate key="instagram.noinstamedia" extensionName="ns_instagram" />
-				</f:else>
+			<f:if condition="{instauser}">
+				<f:if condition="{instamedia}">
+					<f:then>
+						<div class="gallery">
+							<f:render partial="Graphapiview/Instamedia" arguments="{instamedia:instamedia,settings:settings}" />
+						</div>
+					</f:then>
+					<f:else>
+						<f:translate key="instagram.noinstamedia" extensionName="ns_instagram" />
+					</f:else>
+				</f:if>
 			</f:if>
 		</div>
 	</f:section>

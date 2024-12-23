@@ -34,17 +34,16 @@ class InstagramFeedsController extends ActionController
 
         if (empty($settings['graphapi'])) {
             $error = LocalizationUtility::translate('instagram.noapi', 'ns_instagram');
-            // @extensionScannerIgnoreLine
             $this->addFlashMessage($error, '', $severityClass);
         } else {
-            $instauser = $this->getAPIdataAction($settings['graphapi'], 'user');
-            if ($instauser['username']) {
-                $this->getAPIdataAction($settings['graphapi'], 'refresh');
-                $instamedia = $this->getAPIdataAction($settings['graphapi'], 'media', $settings['graphitems']);
+            $this->getAPIdataAction($settings['graphapi'], 'refresh');
+            $instamedia = $this->getAPIdataAction($settings['graphapi'], 'media', $settings['graphitems']);
+
+            if (isset($instamedia['data'])) {
                 $this->view->assignMultiple([
-                    'instauser' => $instauser,
+                    'instauser' => 'true',
                     'instamedia' => $instamedia['data'],
-                ]);
+                ]);    
             } else {
                 $error = LocalizationUtility::translate('instagram.apierror', 'ns_instagram');
                 // @extensionScannerIgnoreLine
@@ -64,10 +63,7 @@ class InstagramFeedsController extends ActionController
     {
         $url = '';
         switch ($additionalconfig) {
-            case 'user':
-                $url = 'https://graph.instagram.com/me?fields=id,username,media_count&access_token=' . $accessToken;
-                break;
-
+            
             case 'refresh':
                 $url = 'https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=' . $accessToken;
                 break;
