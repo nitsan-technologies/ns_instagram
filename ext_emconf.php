@@ -1,12 +1,12 @@
 <?php
 
 $EM_CONF['ns_instagram'] = [
-    'title' => 'Instagram',
-    'description' => 'The TYPO3 Instagram extension is a straightforward plugin that easily integrates to display your Instagram Feed. It offers clean, customizable, and responsive feeds directly from your Instagram account. Showcase galleries, feeds, and photo tiles from multiple Instagram accounts in an appealing format. It adds a visually attractive frontend display of Instagram posts to your TYPO3 website.  *** Live-Demo: https://demo.t3planet.com/t3t-extensions/instagram *** Documentation & Free Support: https://t3planet.com/typo3-instagram-extension',
+    'title' => 'TYPO3 Instagram Feed',
+    'description' => 'Easily display responsive and customizable Instagram feeds on your TYPO3 site. Show galleries and photo tiles from one or multiple Instagram accounts in a clean and attractive layout.',
     'category' => 'plugin',
-    'author' => 'T3: Nilesh Malankiya, T3: Jay Bhalgamiya, QA: Krishna Dhapa',
-    'author_email' => 'sanjay@nitsan.in',
-    'author_company' => 'T3Planet // NITSAN',
+    'author' => 'Team T3Planet',
+    'author_email' => 'info@t3planet.de',
+    'author_company' => 'T3Planet',
     'state' => 'stable',
     'uploadfolder' => 0,
     'createDirs' => '',
