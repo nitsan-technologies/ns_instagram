@@ -4,7 +4,7 @@
 		<header/>
 		<body>
 			<trans-unit id="instagram.noapi">
-				<source>Please enter valid Instagram access token at the extension constant.</source>
+				<source>Please enter valid Instagram access token at the extension constant and site sets.</source>
 			</trans-unit>
 			<trans-unit id="instagram.apierror">
 				<source>Instagram Access Token is invalid. Please enter a valid Access Token.</source>

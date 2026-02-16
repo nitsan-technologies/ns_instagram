@@ -1,0 +1,71 @@
+categories:
+  ns_instagram:
+    label: Instagram
+
+  ns_instagram.view:
+    label: View Settings
+    parent: ns_instagram
+
+  ns_instagram.configuration:
+    label: Configuration Settings
+    parent: ns_instagram
+
+  ns_instagram.configuration.API:
+    label: Common Settings
+    parent: ns_instagram.configuration
+
+  ns_instagram.configuration.design:
+    label: Designing Settings
+    parent: ns_instagram.configuration
+
+settings:
+
+  ##################################################
+  # View
+  ##################################################
+
+  ns_instagram.view.templateRootPath:
+    label: Path to template root (FE)
+    category: ns_instagram.view
+    type: string
+    default: 'EXT:ns_instagram/Resources/Private/Templates/'
+
+  ns_instagram.view.partialRootPath:
+    label: Path to template partials (FE)
+    category: ns_instagram.view
+    type: string
+    default: 'EXT:ns_instagram/Resources/Private/Partials/'
+
+  ns_instagram.view.layoutRootPath:
+    label: Path to template layouts (FE)
+    category: ns_instagram.view
+    type: string
+    default: 'EXT:ns_instagram/Resources/Private/Layouts/'
+
+  ##################################################
+  # Configuration
+  ##################################################
+
+  ns_instagram.configuration.api.graphapi:
+    label: LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:apiconfig.graphapi
+    category: ns_instagram.configuration.api
+    type: string
+    default: ''
+
+  ns_instagram.configuration.design.jquery:
+    label: LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:settings.jquery
+    category: ns_instagram.configuration.common
+    type: string
+    default: 'https://code.jquery.com/jquery-latest.min.js'
+
+  ns_instagram.configuration.design.customcss:
+    label: LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:settings.customcss
+    category: ns_instagram.configuration.common
+    type: string
+    default: 'EXT:ns_instagram/Resources/Public/Css/custom.css'
+
+  ns_instagram.configuration.design.fontawesome:
+    label: LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:settings.fontawesome
+    category: ns_instagram.configuration.design
+    type: string
+    default: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css'
