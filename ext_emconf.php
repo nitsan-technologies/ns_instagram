@@ -11,10 +11,10 @@ $EM_CONF['ns_instagram'] = [
     'uploadfolder' => 0,
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '6.0.1',
+    'version' => '7.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '8.7.0-13.9.99',
+            'typo3' => '8.7.0-14.9.99',
         ],
         'conflicts' => [],
         'suggests' => [],

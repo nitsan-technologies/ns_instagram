@@ -1,0 +1,17 @@
+mod.wizards.newContentElement.wizardItems.plugins {
+	elements{
+		nsinstagram_instagramfeeds{
+			icon = .EXT:ns_instagram/Resources/Public/Icons/plug_instagram.svg
+			iconIdentifier = ext-ns-instagram-icon
+			title = LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_ns_instagram_instagramfeeds.name
+			description = LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:tx_ns_instagram_instagramfeeds.description
+			tt_content_defValues {
+				CType = list
+				list_type = nsinstagram_instagramfeeds
+			}
+		}
+	}
+}
+
+mod.web_layout.tt_content.preview.list.nsinstagram_instagramfeeds = EXT:ns_instagram/Resources/Private/Backend/NsInstagram.html
+mod.web_layout.tt_content.preview.nsinstagram_instagramfeeds = EXT:ns_instagram/Resources/Private/Backend/NsInstagramV14.html

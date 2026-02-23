@@ -1,0 +1,31 @@
+@import 'EXT:ns_instagram/Configuration/TypoScript/setup.typoscript'
+
+plugin.tx_nsinstagram_instagramfeeds {
+    view {
+        templateRootPaths.0 = EXT:ns_instagram/Resources/Private/Templates/
+        templateRootPaths.1 = {$ns_instagram.view.templateRootPath}
+        partialRootPaths.0 = EXT:ns_instagram/Resources/Private/Partials/
+        partialRootPaths.1 = {$ns_instagram.view.partialRootPath}
+        layoutRootPaths.0 = EXT:ns_instagram/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$ns_instagram.view.layoutRootPath}
+    }
+    settings {
+        graphapi = {$ns_instagram.configuration.api.graphapi}
+    }
+}
+page = PAGE
+page {
+    
+    includeCSS {
+		nsinstagramFontAwesomeCss = {$ns_instagram.configuration.design.fontawesome}
+		nsinstagramFontAwesomeCss.if.isTrue = {$ns_instagram.configuration.design.fontawesome}
+        nsinstagramFancyboxCss = EXT:ns_instagram/Resources/Public/Css/jquery.fancybox.min.css
+		nsinstagramCustomcss = {$ns_instagram.configuration.design.customcss}
+		nsinstagramCustomcss.if.isTrue = {$ns_instagram.configuration.design.customcss}
+	}
+
+    includeJS {
+        nsinstagramjQuery = {$ns_instagram.configuration.design.jquery}
+        nsinstagramjQuery.if.isTrue = {$ns_instagram.configuration.design.jquery}
+    }
+}
