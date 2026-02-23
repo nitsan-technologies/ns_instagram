@@ -41,7 +41,7 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['nsinstagram_
     );
     // @extensionScannerIgnoreLine
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
-        '',
+        '*',
         'FILE:EXT:ns_instagram/Configuration/FlexForm/Instagramfeeds.xml',
         $ctypeKey,
     );    
