@@ -10,14 +10,6 @@ categories:
     label: Configuration Settings
     parent: ns_instagram
 
-  ns_instagram.configuration.API:
-    label: Common Settings
-    parent: ns_instagram.configuration
-
-  ns_instagram.configuration.design:
-    label: Designing Settings
-    parent: ns_instagram.configuration
-
 settings:
 
   ##################################################
@@ -48,24 +40,24 @@ settings:
 
   ns_instagram.configuration.api.graphapi:
     label: LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:apiconfig.graphapi
-    category: ns_instagram.configuration.api
+    category: ns_instagram.configuration
     type: string
     default: ''
 
   ns_instagram.configuration.design.jquery:
     label: LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:settings.jquery
-    category: ns_instagram.configuration.common
+    category: ns_instagram.configuration
     type: string
     default: 'https://code.jquery.com/jquery-latest.min.js'
 
   ns_instagram.configuration.design.customcss:
     label: LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:settings.customcss
-    category: ns_instagram.configuration.common
+    category: ns_instagram.configuration
     type: string
     default: 'EXT:ns_instagram/Resources/Public/Css/custom.css'
 
   ns_instagram.configuration.design.fontawesome:
     label: LLL:EXT:ns_instagram/Resources/Private/Language/locallang_db.xlf:settings.fontawesome
-    category: ns_instagram.configuration.design
+    category: ns_instagram.configuration
     type: string
     default: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css'
