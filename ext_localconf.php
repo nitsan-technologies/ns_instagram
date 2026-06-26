@@ -58,3 +58,12 @@ if (version_compare($typo3VersionArray['version_main'], '12', '<=')) {
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
     );
 }
+
+if (version_compare($typo3VersionArray['version_main'], '13', '>=')) {
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup(
+        '@import "EXT:ns_instagram/Configuration/TypoScript/setup.typoscript"'
+    );
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptConstants(
+        '@import "EXT:ns_instagram/Configuration/TypoScript/constants.typoscript"'
+    );
+}
