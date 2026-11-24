@@ -11,23 +11,23 @@
                     <f:for each="{instadata.children.data}" as="carousel" iteration="i">
                         <f:if condition="{i.isFirst}">
                             <f:then>
-                                <a href='{carousel.media_url}' data-fancybox="fancybox-{instadata.id}" data-caption="{instadata.caption}">
+                                <a href='{carousel.media_url}' data-fancybox="fancybox-{instadata.id}" data-caption="{instadata.captionHtml}">
                                     <f:render section="insta-gallery-item" arguments="{_all}" />
                                 </a>
                             </f:then>
                             <f:else>
-                                <a href='{carousel.media_url}' data-fancybox="fancybox-{instadata.id}" data-caption="{instadata.caption}" style="display: none;">{instadata.permalink}</a>
+                                <a href='{carousel.media_url}' data-fancybox="fancybox-{instadata.id}" data-caption="{instadata.captionHtml}" style="display: none;">{instadata.permalink}</a>
                             </f:else>
                         </f:if>
                     </f:for>
                 </f:case>
                 <f:case value="VIDEO">
-                    <a href='{instadata.media_url}' data-fancybox="fancybox-{instadata.id}" data-caption="{instadata.caption}">
+                    <a href='{instadata.media_url}' data-fancybox="fancybox-{instadata.id}" data-caption="{instadata.captionHtml}">
                         <f:render section="insta-gallery-item" arguments="{_all}" />
                     </a>
                 </f:case>
                 <f:defaultCase>
-                    <a href='{instadata.media_url}' data-fancybox="fancybox-{instadata.id}" data-caption="{instadata.caption}">
+                    <a href='{instadata.media_url}' data-fancybox="fancybox-{instadata.id}" data-caption="{instadata.captionHtml}">
                         <f:render section="insta-gallery-item" arguments="{_all}" />
                     </a>
                 </f:defaultCase>
