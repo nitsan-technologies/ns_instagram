@@ -31,19 +31,28 @@ class InstagramFeedsController extends ActionController
         }
 
         $settings = $this->settings;
+        // Never expose the access token to Fluid (custom templates / {_all}).
+        $publicSettings = $settings;
+        unset($publicSettings['graphapi']);
+        $this->view->assign('settings', $publicSettings);
 
         if (empty($settings['graphapi'])) {
             $error = LocalizationUtility::translate('instagram.noapi', 'ns_instagram');
             $this->addFlashMessage($error, '', $severityClass);
         } else {
-            $this->getAPIdataAction($settings['graphapi'], 'refresh');
-            $instamedia = $this->getAPIdataAction($settings['graphapi'], 'media', $settings['graphitems']);
+            $accessToken = trim((string)$settings['graphapi']);
+            $this->fetchInstagramApiData($accessToken, 'refresh');
+            $instamedia = $this->fetchInstagramApiData(
+                $accessToken,
+                'media',
+                $this->sanitizeItemLimit($settings['graphitems'] ?? 6)
+            );
 
-            if (isset($instamedia['data'])) {
+            if (isset($instamedia['data']) && is_array($instamedia['data'])) {
                 $this->view->assignMultiple([
                     'instauser' => 'true',
-                    'instamedia' => $instamedia['data'],
-                ]);    
+                    'instamedia' => $this->sanitizeMediaForView($instamedia['data']),
+                ]);
             } else {
                 $error = LocalizationUtility::translate('instagram.apierror', 'ns_instagram');
                 // @extensionScannerIgnoreLine
@@ -57,39 +66,94 @@ class InstagramFeedsController extends ActionController
     }
 
     /**
-     * action getAPIdata
+     * Fetch data from the Instagram Graph API.
+     *
+     * Meta documents access_token as a required query parameter for these GET
+     * endpoints (media + refresh_access_token). Do not remove it from the URL
+     * without verifying Bearer-only auth against a live token.
+     *
+     * @param string $accessToken
+     * @param string|null $additionalconfig
+     * @param int|null $items
+     * @return array|null
      */
-    public function getAPIdataAction($accessToken, $additionalconfig=null, $items=null)
+    protected function fetchInstagramApiData($accessToken, $additionalconfig = null, $items = null)
     {
         $url = '';
         switch ($additionalconfig) {
-            
             case 'refresh':
-                $url = 'https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=' . $accessToken;
+                $url = 'https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token='
+                    . rawurlencode($accessToken);
                 break;
 
             case 'media':
-                $url = 'https://graph.instagram.com/me/media?fields=media_url,thumbnail_url,caption,id,media_type,timestamp,username,permalink,children{media_url,id,media_type,timestamp,permalink,thumbnail_url}&access_token=' . $accessToken . '&limit=' . $items;
+                // Field list stays unencoded (same as before); only the token is encoded.
+                $url = 'https://graph.instagram.com/me/media?fields=media_url,thumbnail_url,caption,id,media_type,timestamp,username,permalink,children{media_url,id,media_type,timestamp,permalink,thumbnail_url}'
+                    . '&access_token=' . rawurlencode($accessToken)
+                    . '&limit=' . (int)$items;
                 break;
         }
 
         try {
-            if ($url != '') {
+            if ($url !== '') {
                 $apiRequest = GeneralUtility::makeInstance(RequestFactory::class);
                 $apiResponse = $apiRequest->request(
                     $url,
                     'GET',
                     [
-                        'User-Agent' => 'TYPO3 Extension ns_instagram',
+                        'headers' => [
+                            'User-Agent' => 'TYPO3 Extension ns_instagram',
+                        ],
                     ]
                 );
                 $apiResults = $apiResponse->getBody()->getContents();
                 if (($apiResponse->getStatusCode() === 200) || empty($apiResults)) {
-                    return json_decode($apiResults, true);
+                    $decoded = json_decode($apiResults, true);
+                    return is_array($decoded) ? $decoded : null;
                 }
             }
         } catch (\Exception $e) {
-            return json_decode($e->getMessage(), true);
+            // Do not surface exception messages (may contain request URI + token).
+            return null;
         }
+
+        return null;
+    }
+
+    /**
+     * Clamp FlexForm / TypoScript item count to a safe integer range.
+     *
+     * @param mixed $items
+     */
+    protected function sanitizeItemLimit($items): int
+    {
+        $limit = (int)$items;
+        if ($limit < 1) {
+            return 6;
+        }
+        if ($limit > 100) {
+            return 100;
+        }
+        return $limit;
+    }
+
+    /**
+     * Prepare API media for Fluid: keep plain caption for title/alt, and a
+     * pre-escaped captionHtml for Fancybox data-caption (Fancybox uses .html()).
+     */
+    protected function sanitizeMediaForView(array $mediaItems): array
+    {
+        foreach ($mediaItems as &$item) {
+            if (!is_array($item)) {
+                continue;
+            }
+            $caption = isset($item['caption']) ? (string)$item['caption'] : '';
+            $item['caption'] = $caption;
+            // Double-encoding via Fluid attribute escaping makes Fancybox .html() safe.
+            $item['captionHtml'] = htmlspecialchars($caption, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        }
+        unset($item);
+
+        return $mediaItems;
     }
 }
